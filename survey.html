@@ -1,25 +1,36 @@
 <!DOCTYPE html> 
 <html lang="en"> 
   
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" 
-          content="width=device-width, 
-                   initial-scale=1.0"> 
-    <!-- Linking css file  -->
-    <link rel="stylesheet" href="style.css"> 
-    <title>Survey Form</title> 
-</head> 
-  
 <body> 
-    <!-- Creating the form container  -->
+    <style>
+    body    {
+        font-family: Arial, sans-serif;
+        background-color: #6dcff6;
+    }
+
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    .container {
+        padding: 16px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    </style>
     <div class="container"> 
         <h1>Survey Form</h1> 
   
-        <!-- Contains error -->
         <h4 id="errorText"></h4> 
           
-        <!-- Form element  -->
         <form id="surveyForm"> 
             <label for="age"> 
                 Age: 
@@ -62,6 +73,7 @@
             <label for="exhibit">
                 What were your child's top 3 favorite exhibts?
             </label><br>
+
             <label for="exhibit">
                 Exhibit 1 
             </label><br>
@@ -79,6 +91,7 @@
                 <option value="artsmart">Art Smart</option>
                 <option value="bigjohn">Big John</option>
               </select><br>
+
             <label for="exhibit">
                 Exhibit 2
             </label><br>
@@ -96,6 +109,7 @@
                 <option value="artsmart">Art Smart</option>
                 <option value="bigjohn">Big John</option>
               </select><br>
+
             <label for="exhibit">
                 Exhibit 3
             </label><br>
@@ -119,9 +133,5 @@
             </button> 
         </form> 
     </div> 
-  
-    <!-- linking javascript file  -->
-    <script src="script.js"></script> 
 </body> 
-  
 </html>
