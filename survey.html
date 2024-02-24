@@ -1,0 +1,137 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  
+<body> 
+    <style>
+    body    {
+        font-family: Arial, sans-serif;
+        background-color: #6dcff6;
+    }
+
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    .container {
+        padding: 16px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    </style>
+    <div class="container"> 
+        <h1>Survey Form</h1> 
+  
+        <h4 id="errorText"></h4> 
+          
+        <form id="surveyForm"> 
+            <label for="age"> 
+                Age: 
+            </label><br> 
+            <input type="number" 
+                   id="age" 
+                   name="age" 
+                   required><br> 
+  
+            <label> 
+                Gender 
+            </label><br> 
+            <input type="radio" 
+                   id="male" 
+                   name="type" 
+                   value="Male" 
+                   required> 
+              
+            <label for="Male"> 
+                Male 
+            </label><br> 
+            <input type="radio" 
+                   id="female" 
+                   name="type" 
+                   value="Female" 
+                   required> 
+              
+           <label for="Female"> 
+                Female
+            </label><br> 
+            <input type="radio" 
+                   id="prefer not to say" 
+                   name="type" 
+                   value="Prefer not to say" 
+                   required> 
+  
+            <label for="Prefer not to say"> 
+                Prefer not to say
+            </label><br> 
+            <label for="exhibit">
+                What were your child's top 3 favorite exhibts?
+            </label><br>
+
+            <label for="exhibit">
+                Exhibit 1 
+            </label><br>
+            <select>
+                <option value="select">select choice</option>
+                <option value="tugboattots">Tugboat Tots</option>
+                <option value="kidsport">KidsPort</option>
+                <option value="watersjourney">Water's Journey</option>
+                <option value="forts">Forts</option>
+                <option value="oceansandbox">Ocean Sandbox</option>
+                <option value="theater">Theater</option>
+                <option value="engineersworkshop">Engineers' Workshop</option>
+                <option value="farm">Farm</option>
+                <option value="safetyvillage">Safety Village</option>
+                <option value="artsmart">Art Smart</option>
+                <option value="bigjohn">Big John</option>
+              </select><br>
+
+            <label for="exhibit">
+                Exhibit 2
+            </label><br>
+            <select>
+                <option value="select">select choice</option>
+                <option value="tugboattots">Tugboat Tots</option>
+                <option value="kidsport">KidsPort</option>
+                <option value="watersjourney">Water's Journey</option>
+                <option value="forts">Forts</option>
+                <option value="oceansandbox">Ocean Sandbox</option>
+                <option value="theater">Theater</option>
+                <option value="engineersworkshop">Engineers' Workshop</option>
+                <option value="farm">Farm</option>
+                <option value="safetyvillage">Safety Village</option>
+                <option value="artsmart">Art Smart</option>
+                <option value="bigjohn">Big John</option>
+              </select><br>
+
+            <label for="exhibit">
+                Exhibit 3
+            </label><br>
+            <select>
+                <option value="select">select choice</option>
+                <option value="tugboattots">Tugboat Tots</option>
+                <option value="kidsport">KidsPort</option>
+                <option value="watersjourney">Water's Journey</option>
+                <option value="forts">Forts</option>
+                <option value="oceansandbox">Ocean Sandbox</option>
+                <option value="theater">Theater</option>
+                <option value="engineersworkshop">Engineers' Workshop</option>
+                <option value="farm">Farm</option>
+                <option value="safetyvillage">Safety Village</option>
+                <option value="artsmart">Art Smart</option>
+                <option value="bigjohn">Big John</option>
+              </select><br><br>
+  
+            <button type="submit"> 
+                Submit 
+            </button> 
+        </form> 
+    </div> 
+</body> 
+</html>
