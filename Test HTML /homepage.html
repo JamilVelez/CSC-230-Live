@@ -3,6 +3,8 @@
 <head>
 <img src="1.jpg" alt="Italian Trulli" width="2000" height="300">
 </head>
+<!-- Google translate button for the website script + division
+https://www.w3schools.com/howto/howto_google_translate.asp -->
 <div id="google_translate_element"></div>
 <script type="text/javascript">
      function googleTranslateElementInit() {
@@ -12,6 +14,18 @@
      
      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <style>
+/* style that hides the Google Nav bar when selecting a language to translate to
+https://stackoverflow.com/questions/11248673/hiding-google-translate-bar */
+/* bug happens when translating, clicking on a different HTML file, then clicking Back or Return - a feedback button from Google shows up 
+that breaks the translate button and translation itself */
+body {
+top: 0px !important;
+}
+
+body > .skiptranslate > iframe.skiptranslate {
+display: none !important;
+visibility: hidden !important;
+}
 ul#horizontal, #horizontal ul{
 margin:10px;
 padding:0;
@@ -42,6 +56,8 @@ font-size: 23px;
 color:#107A83
 }
 
+/* Position and Z-index fixes the hover problem where it would disappear when trying to click the menu items */
+/* New issue arises when on a screen that is not full screen "Login" keeps moving when hovering over some items */
 #horizontal li ul{
 display:none;
 position:absolute;
