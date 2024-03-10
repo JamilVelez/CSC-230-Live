@@ -65,10 +65,19 @@ left:0;
 top:32px
 }
 
+/* Position and Z-index fixes the hover problem where it would disappear when trying to click the menu items */
+/* New issue arises when on a screen that is not full screen "Login" keeps moving when hovering over some items */
 #horizontal li:hover ul {
 display:block;
+<<<<<<< Updated upstream
 position:relative;
 z-index: inherit;
+=======
+position: relative;
+z-index: 100;
+
+
+>>>>>>> Stashed changes
 }
 
 #horizontal li ul a{
