@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Map Container</title>
+  <link rel="stylesheet" href="MapBorder.css">
+  <style>
+    /* Add CSS to style the map container */
+    #mapContainer {
+      position: relative;
+      width: 80%; /* Adjust the width of the map container */
+      max-width: 800px; /* Set a maximum width if needed */
+      margin: 0 auto; /* Center the map container horizontally */
+      border: 2px solid #3BBFB9; /* Adjust border properties */
+      border-radius: 10px; /* Adjust border radius */
+      overflow: hidden; /* Hide overflow content */
+    }
+    #map {
+      width: 100%;
+      height: 100%; /* Make sure the map fills its container */
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%; /* Ensure the iframe fills the map container */
+    }
+  </style>
+</head>
+<body>
+  <!-- Map container -->
+  <div class="map-container" id="mapContainer">
+    <!-- This iframe will contain the interactive map -->
+    <iframe src="file:///Users/annierome/Desktop/CSC%20230/Level1/interactive_map/dist/index.html" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+  <!-- JavaScript files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="MapBorder.js"></script>
+  <script src="Level1.js"></script>
+
+  <!-- Text overlays -->
+  <div class="cafe-txt hide">
+    <h>Creativity Cafe</h>
+    <p>Insert Text</p>
+  </div>
+  <div class="GuestServices-txt hide">
+    <h>Guest Services</h>
+    <p>Insert Text</p>
+  </div>
+  <div class="Tugboat-txt hide">
+    <h>Tugboat Tots</h>
+    <p>Insert Text</p>
+  </div>
+  <div class="Kidsport-txt hide">
+    <h>KidsPort</h>
+    <p>Insert Text</p>
+  </div>
+</body>
+</html>
