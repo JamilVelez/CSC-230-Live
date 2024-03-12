@@ -18,78 +18,70 @@ https://www.w3schools.com/howto/howto_google_translate.asp -->
      </script>
      
      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<style>
-/* style that hides the Google Nav bar when selecting a language to translate to
-https://stackoverflow.com/questions/11248673/hiding-google-translate-bar */
-/* bug happens when translating, clicking on a different HTML file, then clicking Back or Return - a feedback button from Google shows up 
-that breaks the translate button and translation itself */
-body {
-top: 0px !important;
-}
-
-body > .skiptranslate > iframe.skiptranslate {
-display: none !important;
-visibility: hidden !important;
-}
-ul#horizontal, #horizontal ul{
-margin:10px;
-padding:0;
-list-style-type:none;
-height:32px
-}
-
-#horizontal li{
-float:left;
-width:152px;
-position: relative
-}
-
-#horizontal li a{
-display:block;
-width:150px;
-line-height:30px;
-text-align:center;
-Color:white;
-text-decoration:none;
-background-color:#9b51e0;
-border:1px solid white
-background: size: flex;
-font-size: 23px;
-}
-
-#horizontal li a:hover{
-color:#107A83
-}
-
-/* Position and Z-index fixes the hover problem where it would disappear when trying to click the menu items */
-/* New issue arises when on a screen that is not full screen "Login" keeps moving when hovering over some items */
-#horizontal li ul{
-display:none;
-position:absolute;
-left:0;
-top:32px
-}
-
-/* Position and Z-index fixes the hover problem where it would disappear when trying to click the menu items */
-/* New issue arises when on a screen that is not full screen "Login" keeps moving when hovering over some items */
-#horizontal li:hover ul {
-display:block;
-position:relative;
-z-index: inherit;
-position: relative;
-z-index: 100;
-
-}
-
-#horizontal li ul a{
-background-color:#9b51e0
-}
-
-body{
-     background-color: #6dcff6;
-}
-
-</style>
+     <style>
+          /* style that hides the Google Nav bar when selecting a language to translate to
+          https://stackoverflow.com/questions/11248673/hiding-google-translate-bar */
+          /* bug happens when translating, clicking on a different HTML file, then clicking Back or Return - a feedback button from Google shows up 
+          that breaks the translate button and translation itself */
+          body {
+              top: 0px !important;
+          }
+          
+          body > .skiptranslate > iframe.skiptranslate {
+              display: none !important;
+              visibility: hidden !important;
+          }
+          
+          ul#horizontal, #horizontal ul {
+              margin: 10px;
+              padding: 0;
+              list-style-type: none;
+              height: 32px;
+          }
+          
+          #horizontal li {
+              float: left;
+              width: 152px;
+              position: relative;
+          }
+          
+          #horizontal li a {
+              display: block;
+              width: 150px;
+              line-height: 30px;
+              text-align: center;
+              color: white;
+              text-decoration: none;
+              background-color: #9b51e0;
+              border: 1px solid white;
+              font-size: 23px;
+          }
+          
+          #horizontal li a:hover {
+              color: #107a83;
+          }
+          
+          #horizontal li ul {
+              display: none;
+              position: absolute;
+              left: 0;
+              top: 32px;
+          }
+          
+          #horizontal li:hover ul {
+              display: block;
+              z-index: 100;
+          }
+          
+          #horizontal li ul a {
+              background-color: #9b51e0;
+          }
+          
+          body {
+              background-color: #6dcff6;
+          }
+          </style>
+          
 <body>
 <ul id="horizontal">
 <li><a href="#">Exhibits</a>
