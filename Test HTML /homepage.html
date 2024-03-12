@@ -20,15 +20,20 @@ https://www.w3schools.com/howto/howto_google_translate.asp -->
      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
      <style>
          
-     body {
+body, html{
     background-color: #6dcff6;
     font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrolling */
+    margin: 0;
+    padding: 0;
 }
 
 ul#horizontal, #horizontal ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    max-width: 100%; /* Ensure the menu does not extend beyond the viewport width */
 }
 
 /* Top-level list items */
