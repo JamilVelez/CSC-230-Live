@@ -19,92 +19,127 @@ https://www.w3schools.com/howto/howto_google_translate.asp -->
      
      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
      <style>
-          /* style that hides the Google Nav bar when selecting a language to translate to
-          https://stackoverflow.com/questions/11248673/hiding-google-translate-bar */
-          /* bug happens when translating, clicking on a different HTML file, then clicking Back or Return - a feedback button from Google shows up 
-          that breaks the translate button and translation itself */
-          body {
-              top: 0px !important;
-          }
-          
-          body > .skiptranslate > iframe.skiptranslate {
-              display: none !important;
-              visibility: hidden !important;
-          }
-          
-          ul#horizontal, #horizontal ul {
-              margin: 10px;
-              padding: 0;
-              list-style-type: none;
-              height: 32px;
-          }
-          
-          #horizontal li {
-              float: left;
-              width: 152px;
-              position: relative;
-          }
-          
-          #horizontal li a {
-              display: block;
-              width: 150px;
-              line-height: 30px;
-              text-align: center;
-              color: white;
-              text-decoration: none;
-              background-color: #9b51e0;
-              border: 1px solid white;
-              font-size: 23px;
-          }
-          
-          #horizontal li a:hover {
-              color: #107a83;
-          }
-          
-          #horizontal li ul {
-              display: none;
-              position: absolute;
-              left: 0;
-              top: 32px;
-          }
-          
-          #horizontal li:hover ul {
-              display: block;
-              z-index: 100;
-          }
-          
-          #horizontal li ul a {
-              background-color: #9b51e0;
-          }
-          
-          body {
-              background-color: #6dcff6;
-          }
-          </style>
-          
+         
+     body {
+    background-color: #6dcff6;
+    font-family: Arial, sans-serif;
+}
+
+ul#horizontal, #horizontal ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Top-level list items */
+#horizontal > li {
+    float: left;
+    position: relative;
+}
+
+#horizontal > li > a {
+    display: block;
+    padding: 10px;
+    background-color: #9b51e0;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+}
+
+#horizontal > li > a:hover {
+    color: #107A83;
+}
+
+/* Direct child dropdowns of top-level items */
+#horizontal > li > ul {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+#horizontal > li:hover > ul, #horizontal > li ul li:hover > ul {
+    display: block;
+}
+
+/* Nested list items */
+#horizontal li ul li {
+    position: relative;
+    float: none; /* Reset the float for dropdown items */
+}
+
+#horizontal li ul li a {
+    display: block;
+    background-color: #9b51e0;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+}
+
+#horizontal li ul li a:hover {
+    background-color: #7d3cb3;
+}
+
+/* Nested dropdowns - display to the side */
+#horizontal li ul li ul {
+    display: none;
+    position: absolute;
+    left: 100%; /* Position to the side of the parent item */
+    top: 0;
+    min-width: 100%; /* Ensure a consistent width */
+}
+
+#horizontal li ul li:hover > ul {
+    display: block;
+}
+</style>
+
 <body>
-<ul id="horizontal">
-<li><a href="#">Exhibits</a>
-     <ul>
-     <li><a href="ArtSmart.html">Art Smart</a></li>
-     <li><a href="BigJohn.html">Big John</a></li>
-     <li><a href="CentralBank.html">Central Bank</a></li>
-     <li><a href="EngineersWorkshop.html">Engineer's Workshop</a></li>
-     <li><a href="Farm.html">Farm</a></li>
-     <li><a href="Farm.html">Firehouse</a></li>
-     <li><a href="GlobalCafe.html">Global Cafe</a></li>
-     <li><a href="IceCream.html">Ice Cream Parlor</a></li>
-     <li><a href="Kidsport.html">KidsPort</a></li>
-     <li><a href="LightCloud.html">Light Cloud</a></li>
-     <li><a href="PizzaPlace.html">Pizza Place</a></li>
-     <li><a href="Publix.html">Publix</a></li>
-     <li><a href="StJoes.html">St. Joseph's Children's Hospital</a></li>
-     <li><a href="Tugboats.html">Tugboats Tots</a></li>
-     <li><a href="Twinkle.html">Twinkle Stars Theater</a></li>
-     <li><a href="Vet.html">Vet Clinic</a></li>
-     <li><a href="Waters.html">Water's Journey</a></li>
-     </ul>
-</li>
+     <ul id="horizontal">
+          <li><a href="homepage.html">Home</a></li>
+          <li>
+               <a href="#">Exhibits ▼</a>
+               <ul>
+                    <li>
+                         <a href="#">Level 1 ▼</a>
+                         <ul>
+                         <li><a href="ArtSmart.html">Art Smart</a></li>
+                         <li><a href="BigJohn.html">Big John</a></li>
+                         </ul>
+                    </li>
+                    <li>
+                         <a href="#">Level 2 ▼</a>
+                         <ul>
+                         <li><a href="CentralBank.html">Central Bank</a></li>
+                         <li><a href="EngineersWorkshop.html">Engineer's Workshop</a></li>
+                         <li><a href="Farm.html">Farm</a></li>
+                         <li><a href="Firehouse.html">Firehouse</a></li>
+                         </ul>
+                    </li>
+                    <li>
+                         <a href="#">Level 3 ▼</a>
+                         <ul>
+                         <li><a href="GlobalCafe.html">Global Cafe</a></li>
+                         <li><a href="IceCream.html">Ice Cream Parlor</a></li>
+                         <li><a href="Kidsport.html">KidsPort</a></li>
+                         </ul>
+                    </li>
+                    <li>
+                         <a href="#">Level 4 ▼</a>
+                         <ul>
+                         <li><a href="LightCloud.html">Light Cloud</a></li>
+                         <li><a href="PizzaPlace.html">Pizza Place</a></li>
+                         <li><a href="Publix.html">Publix</a></li>
+                         <li><a href="StJoes.html">St. Joseph's Children's Hospital</a></li>
+                         <li><a href="Tugboats.html">Tugboats Tots</a></li>
+                         <li><a href="Twinkle.html">Twinkle Stars Theater</a></li>
+                         <li><a href="Vet.html">Vet Clinic</a></li>
+                         <li><a href="Waters.html">Water's Journey</a></li>
+                         </ul>
+                    </li>
+               </ul>
+          </li>
 <li><a href="Resources.html">Resources</a></li>
 <li><a href="Play.html">Play</a></li>
 <li><a href="Map.html">Map</a></li>
