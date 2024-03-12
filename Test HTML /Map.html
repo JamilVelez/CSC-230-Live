@@ -5,28 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Map</title>
     <style>
-         #map {
-            position: relative;
-            top: 200px; /* Adjust top position as needed */
-            left: 200px; /* Adjust left position as needed */
-            width: 1000x; /* Adjust width as needed */
-            height: 800px; /* Adjust height as needed */
-            border: 1px solid #ccc;
-        }
-        body{
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             background-color: #6dcff6;
-        }       
-        /* Hide all iframes except the first one initially */
-        iframe {
-            display: none;
         }
-        iframe:first-of-type {
-            display: block;
+
+        .map-container {
+            /* Adjust width and height as needed */
+            width: 800px;
+            height: 600px;
+            border: 1px solid #ccc;
+            margin: 50px; /* Adjust margin as needed */
+            display: none; /* Initially hide all map containers */
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* Remove border from iframe */
         }
     </style>
 </head>
 <body>
-   
 
     <!-- Buttons to switch between levels -->
     <button onclick="showLevel('Level1')">Level 1</button>
@@ -34,24 +37,30 @@
     <button onclick="showLevel('Level3')">Level 3</button>
 
     <!-- Map containers for each level -->
-    <iframe id="level1-frame" class="map-frame" src="file:///Users/annierome/Desktop/CSC%20230/Level1/interactive_map/dist/index.html"></iframe>
-    <iframe id="level2-frame" class="map-frame" src="file:///Users/annierome/Desktop/CSC%20230/Level2/level2/dist/index.html"></iframe>
-    <iframe id="level3-frame" class="map-frame" src="file:///Users/annierome/Desktop/CSC%20230/Level3/interacrtivemap_3/dist/index.html"></iframe>
+    <div class="map-container" id="level1-container" style="display: block;">
+        <iframe id="level1-frame"  src="file:///Users/annierome/Documents/GitHub/CSC-230/Test HTML /Interactive Maps/Level1/interactive_map/dist/index.html"></iframe>
+    </div>
+    <div class="map-container" id="level2-container">
+        <iframe id="level2-frame"  src="file:///Users/annierome/Documents/GitHub/CSC-230/Test HTML /Interactive Maps/Level2/level2/dist/index.html"></iframe>
+    </div>
+    <div class="map-container" id="level3-container">
+        <iframe id="level3-frame"  src="file:///Users/annierome/Documents/GitHub/CSC-230/Test HTML /Interactive Maps/Level3/interacrtivemap_3/dist/index.html"></iframe>
+    </div>
 
     <script>
         function showLevel(level) {
-            // Hide all map frames
-            var mapFrames = document.querySelectorAll('iframe');
-            mapFrames.forEach(function(frame) {
-                frame.style.display = 'none';
+            // Hide all map containers
+            var mapContainers = document.querySelectorAll('.map-container');
+            mapContainers.forEach(function(container) {
+                container.style.display = 'none';
             });
 
-            // Show the selected map frame
-            var selectedFrame = document.getElementById(level.toLowerCase() + '-frame');
-            if (selectedFrame) {
-                selectedFrame.style.display = 'block';
+            // Show the selected map container
+            var selectedContainer = document.getElementById(level.toLowerCase() + '-container');
+            if (selectedContainer) {
+                selectedContainer.style.display = 'block';
             } else {
-                console.error("Frame not found for level:", level);
+                console.error("Container not found for level:", level);
             }
         }
     </script>
