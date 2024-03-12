@@ -1,19 +1,59 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>GCM-Protoype</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/Login-Form-Basic-icons.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    <style>
+         #map {
+            position: relative;
+            top: 200px; /* Adjust top position as needed */
+            left: 200px; /* Adjust left position as needed */
+            width: 1000x; /* Adjust width as needed */
+            height: 800px; /* Adjust height as needed */
+            border: 1px solid #ccc;
+        }
+        body{
+            background-color: #6dcff6;
+        }       
+        /* Hide all iframes except the first one initially */
+        iframe {
+            display: none;
+        }
+        iframe:first-of-type {
+            display: block;
+        }
+    </style>
 </head>
-
 <body>
-    <p>Map page test</p>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bold-and-bright.js"></script>
-</body>
+   
 
+    <!-- Buttons to switch between levels -->
+    <button onclick="showLevel('Level1')">Level 1</button>
+    <button onclick="showLevel('Level2')">Level 2</button>
+    <button onclick="showLevel('Level3')">Level 3</button>
+
+    <!-- Map containers for each level -->
+    <iframe id="level1-frame" class="map-frame" src="file:///Users/annierome/Desktop/CSC%20230/Level1/interactive_map/dist/index.html"></iframe>
+    <iframe id="level2-frame" class="map-frame" src="file:///Users/annierome/Desktop/CSC%20230/Level2/level2/dist/index.html"></iframe>
+    <iframe id="level3-frame" class="map-frame" src="file:///Users/annierome/Desktop/CSC%20230/Level3/interacrtivemap_3/dist/index.html"></iframe>
+
+    <script>
+        function showLevel(level) {
+            // Hide all map frames
+            var mapFrames = document.querySelectorAll('iframe');
+            mapFrames.forEach(function(frame) {
+                frame.style.display = 'none';
+            });
+
+            // Show the selected map frame
+            var selectedFrame = document.getElementById(level.toLowerCase() + '-frame');
+            if (selectedFrame) {
+                selectedFrame.style.display = 'block';
+            } else {
+                console.error("Frame not found for level:", level);
+            }
+        }
+    </script>
+</body>
 </html>
