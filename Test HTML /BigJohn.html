@@ -1,77 +1,128 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
-    <style>
-        ul#horizontal, #horizontal ul{
-            margin:10px;
-            padding:0;
-            list-style-type:none;
-            height:32px;
-        }
-        
-        #horizontal li{
-            float:left;
-            width:152px;
-            position: relative;
-        }
-        
-        #horizontal li a{
-            display:block;
-            width:150px;
-            line-height:30px;
-            text-align:center;
-            color:black;
-            text-decoration:none;
-            background-color:#6dcff6;
-            border:1px solid black;
-            background-size: cover; /* Or specify the desired background size */
-            font-size: 23px;
-        }
-        
-        #horizontal li a:hover{
-            color:#107A83;
-        }
-        
-        #horizontal li ul{
-            display:none;
-            position:absolute;
-            left:0;
-            top:32px;
-        }
-        
-        #horizontal li:hover ul {
-            display:block;
-        }
-        
-        #horizontal li ul a{
-            background-color:#FFFFFF;
-        }
-        </style>
-        
+<html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>GCM-Protoype</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/Login-Form-Basic-icons.css">
+    <title>GCM-Prototype</title>
+    <style>
+        body, html {
+            background-color: #6dcff6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .container {
+            margin-top: 50px; /* Adjust margin top as needed */
+        }
+
+        .btn-primary {
+            display: inline-block;
+            width: 100px; /* Adjust width as needed */
+            height: 100px; /* Adjust height as needed */
+            border: 1px solid black;
+            padding: 10px;
+            background-color: #6dcff6;
+            background-image: url('HomeButton.png'); /* Assuming the image is named HomeButton.png and is in the same folder */
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-indent: -9999px;
+            color: transparent; /* Hide text */
+        }
+
+        .btn-primary:hover {
+            background-color: #9b51e0; /* Change color on hover if needed */
+        }
+
+        h1.text-center {
+            font-size: 36px; /* Adjust font size */
+            color: #fff; /* Text color */
+            margin-top: -10px; /* Adjust margin top */
+            margin-left: 600px;
+        }
+
+        .big-john {
+            position: absolute;
+            left: 900px;
+            top:0px;
+            width: 400px; /* Adjust width as needed */
+            height: auto; /* Maintain aspect ratio */
+            padding: 100px;
+        }
+
+        .text-box {
+            background-color: white; /* Set background color to white */
+            padding: 30px; /* Add padding to create space inside the box */
+            border: 1px solid black; /* Add border */
+            width: 500px; /* Adjust width as needed */
+            margin: 0 auto; /* Center the box horizontally */
+            position: absolute; /* Position the box */
+            left: 50%; /* Position the box horizontally in the center */
+            top: 50%; /* Position the box vertically in the center */
+            transform: translate(-50%, -50%); /* Center the box both horizontally and vertically */
+            z-index: 1; /* Bring the box forward */
+}
+.text-box2 {
+    font-size: 12px;
+    background-color: white;
+    padding: 30px;
+    border: 1px solid black;
+    width: 500px; /* Adjust width as needed */
+    margin: 0 auto;
+    position: absolute;
+    margin-left: 470px;
+    margin-top: 300px;
+}
+.text-box2 input[type="text"] {
+    width: 90%; /* Make the input box take up the full width of the text-box2 div */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    padding: 10px; /* Add padding to the input box */
+}
+
+
+
+    </style>
 </head>
+
 <body>
+    <div id="google_translate_element"></div>
     <div class="container my-5">
-        <div class="row">
-            <div class="col-12">
-                <nav class="mb-4">
-                    <a href="homepage.html" class="btn btn-primary">Home</a>
-                </nav>
-                <h1 class="text-center mb-4">Exhibit 1</h1>
-                <div class="exhibit">
-                    <!-- Exhibit content goes here -->
-                    <p>This is the content of the exhibit.</p>
-                </div>
-            </div>
+        <nav class="mb-4">
+            <a href="homepage.html" class="btn btn-primary">Home</a>
+        </nav>
+        <h1 class="text-center mb-4">Big John</h1>
+        <img src="BigJohn.png" alt="Big John Image" class="big-john">
+        <div class="exhibit">
+            <!-- Exhibit content goes here -->
+            <p>This is the content of the exhibit.</p>
         </div>
+        <div class="text-box">
+            <!-- Text box content goes here -->
+            <p>*Enter about exhibits*</p>
+        </div>
+        <div class="text-box2">
+            <!-- Text box content goes here -->
+            <p>Play</p>
+            <h2>Enter Play Type:</h2>
+            <form action="submit.php" method="post">
+                <input type="text" name="userdata" placeholder="What type of play is your child demonstarting?" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
     </div>
 
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bold-and-bright.js"></script>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>
