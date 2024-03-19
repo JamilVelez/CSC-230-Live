@@ -14,15 +14,14 @@
             overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
-        .frame1 {
+        .header {
             position: relative;
-            height: 25vh; /* Adjust height as needed */
-        }
-
-        .frame1 img {
-            width: 100%; /* Make the image width 100% of the container */
-            height: auto; /* Maintain aspect ratio */
-            object-fit: cover; /* Ensure the image is displayed as a block element */
+            height: 30vh; /* Adjust height as needed */
+            background-image: url('Tugboat.png'); /* Set the image as background */
+            background-size: cover; /* Make sure the background image covers the entire header */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent the background image from repeating */
+            overflow: hidden; /* Prevent content from overflowing */
         }
 
         .home-button {
@@ -45,29 +44,34 @@
             background-color: #9b51e0; 
         }
 
-        .exhibit-title {
+        .title-box {
             position: absolute;
-            top: 10px;
-            left: 120px; /* Adjust positioning as needed */
-            font-size: 36px; 
-            color: #fff; /* Text color */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px; /* Add padding to the box */
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+            border: 2px solid black; /* Black border */
+            z-index: 2; /* Ensure box is above the image */
         }
 
-        .frame2 {
+        .title {
+            font-size: 36px; 
+            color: #000; /* Text color */
+            text-align: center;
+            margin: 0; /* Remove default margin */
+        }
+
+        .frame {
             background-color: white; /* Set background color to white */
             padding: 30px; /* Add padding to create space inside the box */
             border: 1px solid black; 
             width: 70%; /* Adjust width as needed */
             margin: 0 auto; /* Center horizontally */
-            position: relative; /* Position relative to contain child elements */
-            z-index: 1; /* Bring the box forward */
+            margin-top: 20px; /* Add top margin to create space below header */
         }
 
-        .frame2-content {
-            margin-top: 100px; /* Adjust top margin as needed */
-        }
-
-        .text-box2 input[type="text"] {
+        .text-box input[type="text"] {
             width: 90%; /* Lengthen input box */
             box-sizing: border-box; 
             padding: 10px; /* Add padding to the input box */
@@ -78,24 +82,28 @@
 
 <body>
     <div id="google_translate_element"></div>
-    <div class="frame1">
-        <div class="home-button"></div>
-        <h1 class="exhibit-title">TugBoat Tots</h1>
-        <img src="BigJohn.png" alt="Big John Image">
-    </div>
-    <div class="frame2">
-        <div class="frame2-content">
-            <!-- Text box content goes here -->
-            <p>*Enter about exhibit*</p>
-            <p>Play</p>
-            <h2>Enter Play Type:</h2>
-            <form action="submit.php" method="post">
-                <input type="text" name="userdata" placeholder="What type of play is your child demonstrating?" required>
-                <button type="submit">Submit</button>
-            </form>
+    <div class="header">
+        <a href="homepage.html">
+            <div class="home-button"></div>
+        </a>
+        <div class="title-box">
+            <h1 class="title">TugBoat Tots</h1> <!-- Title text inside the box -->
         </div>
     </div>
-
+    
+    <div class="frame">
+        <!-- Second frame content goes here -->
+        <!-- You can add more content or input boxes here -->
+    </div>
+    
+    <div class="frame">
+        <!-- First frame content goes here -->
+        <h2>Enter Play Type:</h2>
+        <form action="submit.php" method="post" class="text-box">
+            <input type="text" name="userdata" placeholder="What type of play is your child demonstrating?" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
