@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Title Here</title>
+    <style>
+        body {
+            background-color: #6dcff6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .imgcontainer img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        ul#horizontal, #horizontal ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        #horizontal > li {
+            float: left;
+            position: relative;
+        }
+
+        #horizontal > li > a {
+            display: block;
+            padding: 10px;
+            background-color: #9b51e0;
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+        }
+
+        #horizontal > li > a:hover {
+            color: #107A83;
+        }
+
+        #horizontal > li > ul {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+
+        #horizontal > li:hover > ul, #horizontal > li ul li:hover > ul {
+            display: block;
+        }
+
+        #horizontal li ul li {
+            position: relative;
+            float: none;
+        }
+
+        #horizontal li ul li a {
+            display: block;
+            background-color: #9b51e0;
+            color: white;
+            padding: 5px;
+            text-decoration: none;
+        }
+
+        #horizontal li ul li a:hover {
+            background-color: #7d3cb3;
+        }
+
+        #horizontal li ul li ul {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            min-width: 100%;
+        }
+
+        #horizontal li ul li:hover > ul {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="imgcontainer">
+        <a href="homepage.html">
+            <img src="1.jpg" alt="Avatar">
+        </a>
+    </div>
+
+    <ul id="horizontal">
+        <li><a href="homepage.html">Home</a></li>
+        <li>
+            <a href="#">Exhibits ▼</a>
+            <ul>
+                <li>
+                    <a href="#">Level 1 ▼</a>
+                    <ul>
+                        
+                        <li><a href="GlobalCafe.html">Global Cafe</a></li>
+                        <li><a href="GuestServices.html">Guest Services</a></li>
+                        <li><a href="Tugboats.html">Tugboats Tots</a></li>
+                        <li><a href="Kidsport.html">KidsPort</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Level 2 ▼</a>
+                    <ul>
+                        <li><a href="PartyPlace.html">Party Place</a></li>
+                        <li><a href="ArtSmart.html">Art Smart</a></li>
+                        <li><a href="EngineersWorkshop.html">Engineer's Workshop</a></li>
+                        <li><a href="Farm.html">Farm</a></li>
+                        <li><a href="Theater.html">Theater</a></li>
+                        <li><a href="OceanSandbox.html">Ocean Sandbox</a></li>
+                        <li><a href="Forts.html">Forts</a></li>
+                        <li><a href="TempExhibit.html">Temporary Exhibit</a></li>
+                        <li><a href="FamilyPlay.html">Family Play Project</a></li>
+                        <li><a href="Waters.html">Water's Journey</a></li>
+                        <li>
+                            <a href="#"> Safety Village▼</a>
+                            <ul>
+                                <li><a href="CentralBank.html">Central Bank</a></li>
+                                <li><a href="EngineersWorkshop.html">Engineer's Workshop</a></li>
+                                <li><a href="Firehouse.html">Firehouse</a></li>
+                                <li><a href="IceCream.html">Ice Cream Parlor</a></li>
+                                <li><a href="PizzaPlace.html">Pizza Place</a></li>
+                                <li><a href="Hospital.html">Hospital</a></li>
+                                <li><a href="Vet.html">Vet Clinic</a></li>
+                                <li><a href="Publix.html">Publix</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Level 3 ▼</a>
+                    <ul>
+                        <li><a href="BigJohn.html">Big John</a></li>
+                        <li><a href="LearningCenter.html">Learning Center</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="Resources.html">Resources</a></li>
+        <li><a href="Play.html">Play</a></li>
+        <li><a href="Map.html">Map</a></li>
+        <li>
+            <a href="#">About ▼</a>
+            <ul>
+                <li><a href="https://glazermuseum.org/mission/">Mission + History</a></li>
+                <li><a href="https://glazermuseum.org/deai/">DEAI Statement</a></li> 
+                <li><a href="https://glazermuseum.org/contact/">Contact</a></li>
+            </ul>
+        </li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+</body>
+</html>
