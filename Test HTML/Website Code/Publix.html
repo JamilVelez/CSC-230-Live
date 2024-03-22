@@ -103,7 +103,15 @@
         <!-- First frame content goes here -->
         <h2>Enter Play Type:</h2>
         <form action="submit.php" method="post" class="text-box">
-            <input type="text" name="userdata" placeholder="What type of play is your child demonstrating?" required>
+            <select name="userdata" required>
+                <option value="" disabled selected>Select play type</option>
+                <option value="Physical">Physical Play</option>
+                <option value="Socio-Emotional">Socio-Emotional Play</option>
+                <option value="Sensory">Sensory Play</option>
+                <option value="Cognitive">Cognitive Play</option>
+                <option value="Communication">Communication Play</option>
+                <!-- Add more options as needed -->
+            </select>
             <button type="submit">Submit</button>
         </form>
     </div>
