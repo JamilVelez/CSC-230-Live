@@ -1,77 +1,131 @@
-<!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
+<html>
     <style>
-        ul#horizontal, #horizontal ul{
-            margin:10px;
-            padding:0;
-            list-style-type:none;
-            height:32px;
+       body {
+        font-family: Verdana, sans-serif;
+       }
+        #firehouse {
+            background-image: url("firehouse2.jpg");
+            background-size: cover;
+            height: 200px;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0 auto;
         }
-        
-        #horizontal li{
-            float:left;
-            width:152px;
-            position: relative;
-        }
-        
-        #horizontal li a{
-            display:block;
-            width:150px;
-            line-height:30px;
-            text-align:center;
-            color:black;
-            text-decoration:none;
-            background-color:#6dcff6;
-            border:1px solid black;
-            background-size: cover; /* Or specify the desired background size */
-            font-size: 23px;
-        }
-        
-        #horizontal li a:hover{
-            color:#107A83;
-        }
-        
-        #horizontal li ul{
-            display:none;
-            position:absolute;
-            left:0;
-            top:32px;
-        }
-        
-        #horizontal li:hover ul {
-            display:block;
-        }
-        
-        #horizontal li ul a{
-            background-color:#FFFFFF;
-        }
-        </style>
-        
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>GCM-Protoype</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/Login-Form-Basic-icons.css">
-</head>
-<body>
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-12">
-                <nav class="mb-4">
-                    <a href="homepage.html" class="btn btn-primary">Home</a>
-                </nav>
-                <h1 class="text-center mb-4">Exhibit 1</h1>
-                <div class="exhibit">
-                    <!-- Exhibit content goes here -->
-                    <p>This is the content of the exhibit.</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bold-and-bright.js"></script>
-</body>
+        #HomeButton {
+            height: 100px;
+            width: 100px;
+            background-image: url("HomeButton.png");
+            background-size: cover;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        #HomeButton:hover {
+            transform: scale(1.1);
+        }
+
+        #words {
+            text-align: center;
+            font-size: 24px;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .redtext {
+            color: red;
+            font-size: 30;
+            
+        }
+
+        .info {
+            color: dark;
+            text-align: center;
+            font-size: 18px;
+            margin: 0 auto;
+            max-width: 800px;
+            padding : 0 20px 20px;
+        }
+        .text-box2 {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .text-box2 p, .text-box2 h2 {
+            margin: 10px 0;
+        }
+
+        .text-box2 input[type="text"] {
+            width: 90%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px 0; /* Space between input box and label/button */
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+
+        .text-box2 input[type="text"]:focus {
+            border-color: #4CAF50; /* Color change on focus */
+        }
+
+        .text-box2 button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .text-box2 button:hover {
+            background-color: #367a3e; /* Darker shade on hover */
+            transform: scale(1.05); /* Button grows */
+        }
+
+        .text-box2 button:active {
+            background-color: #2e6331; /* Even darker on click */
+            transform: scale(0.95); /* Button shrinks */
+        }
+
+
+    /* Responsive Design Adjustments */
+    @media (max-width: 600px) {
+        #firehouse {
+            height: 150px;
+        }
+        #HomeButton {
+            height: 80px;
+            width: 80px;
+        }
+        #words, .info {
+            font-size: 16px;
+        }
+    }
+    </style>
+    <body>
+        <div id="firehouse" alt="Firehouse exhibit">
+            <a href="homepage.html">
+                <div id="HomeButton" alt="Homepage"></div>
+            </a>
+        </div>
+        <div id="words">
+            <p><br> <span class="redtext"><b>Firehouse</b></span></p>
+        </div>
+        
+        
+        <div class="text-box2">
+            <p>Play</p>
+            <h2>Enter Play Type:</h2>
+            <form action="submit.php" method="post">
+                <input type="text" name="userdata" placeholder="What type of play is your child demonstrating?" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>     
+    </body>
 </html>

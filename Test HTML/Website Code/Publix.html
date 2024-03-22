@@ -8,7 +8,7 @@
     <style>
         body, html {
             background-color: #6dcff6;
-            font-family: Arial, sans-serif;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             margin: 0;
             padding: 0;
             overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -17,7 +17,7 @@
         .header {
             position: relative;
             height: 30vh; /* Adjust height as needed */
-            background-image: url('.png'); /* Set the image as background */
+            background-image: url('./ExhibImages/Tugboat2.jpg'); /* Set the image as background */
             background-size: cover; /* Make sure the background image covers the entire header */
             background-position: center; /* Center the background image */
             background-repeat: no-repeat; /* Prevent the background image from repeating */
@@ -26,8 +26,8 @@
 
         .home-button {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 50px;
+            left: 1px;
             width: 100px;
             height: 100px;
             border: 1px solid black;
@@ -38,30 +38,27 @@
             background-repeat: no-repeat;
             text-indent: -9999px;
             color: transparent; /* Hide text */
+            transition: transform 0.3s ease-in-out;
         }
 
         .home-button:hover {
-            background-color: #9b51e0; 
+            background-color: #9b51e0;
+            transform: scale(1.1); 
         }
-
-        .title-box {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 10px; /* Add padding to the box */
-            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
-            border: 2px solid black; /* Black border */
-            z-index: 2; /* Ensure box is above the image */
+        .greentext {
+            color: green;
+            font-size: 30;
+            font-size: larger;
+            
         }
-
-        .title {
-            font-size: 36px; 
-            color: #000; /* Text color */
+        .info {
+            color: dark;
             text-align: center;
-            margin: 0; /* Remove default margin */
+            font-size: 18px;
+            margin: 0 auto;
+            max-width: 800px;
+            padding : 0 20px 20px;
         }
-
         .frame {
             background-color: white; /* Set background color to white */
             padding: 30px; /* Add padding to create space inside the box */
@@ -86,13 +83,18 @@
         <a href="homepage.html">
             <div class="home-button"></div>
         </a>
-        <div class="title-box">
-            <h1 class="title">Publix</h1> <!-- Title text inside the box -->
-        </div>
     </div>
     
     <div class="frame">
-        <h2>Enter Exhibit Info</h2>
+        <p class="info"><b>"At the grocery store and in the <span class="greentext">Publix exhibit</span>, kids 
+            <br>learn about nutrition and the variety of foods that can  
+            <br>make up a well-balanced diet. Grocery shopping helps teach planning and big-picture thinking. 
+            At the museum, we like to challenge kids to plan a family meal, shop for 
+            a picnic or prepare for a party. Parents can try this activity with their 
+            kids next time they are shopping together. It's a fun and empowering 
+            way to teach kids nutrition and boost their confidence." </b>
+                
+        </p>
         <!-- Second frame content goes here -->
         <!-- You can add more content or input boxes here -->
     </div>
