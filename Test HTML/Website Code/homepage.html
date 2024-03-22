@@ -1,5 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- CODE FOR TIMEONSITE TRACKER -->
+<head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/timeonsite/1.2.0/timeonsitetracker.js"></script>
+</head>
+<script>
+    var config = {
+        // track page by seconds. Default tracking is by milliseconds
+        trackBy: 'seconds',
+        callback: function(data) { /* callback denotes your data tracking is real-time */
+            console.log(data);
+            var endPointUrl = 'http://example.com' //Replace with your actual backend API URL http://localhost/tos
+            if (data && data.trackingType) {
+                if (data.trackingType == 'tos') {
+                    if (Tos.verifyData(data) != 'valid') {
+                        console.log('Data abolished!');
+                        return; 
+                    }
+                }
+    
+                // make use of sendBeacon if this API is supported by your browser.
+                if (navigator && typeof navigator.sendBeacon === 'function') {
+                    data.trasferredWith = 'sendBeacon';
+                    var blob = new Blob([JSON.stringify(data)], {type : 'application/json'});
+                    navigator.sendBeacon(endPointUrl, blob);
+                }
+            }
+        }
+    };
+    var Tos;
+    if (TimeOnSiteTracker) {
+        Tos = new TimeOnSiteTracker(config);
+    }
+    </script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -86,6 +119,31 @@
         #horizontal li ul li:hover > ul {
             display: block;
         }
+        .cookie-consent-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 5px rgba(0,0,0,.2);
+            border-radius: 5px;
+            z-index: 1000; /* Ensure it appears above other content */
+            display: none; /* Hidden by default */
+        }
+
+        .cookie-consent-content p {
+            margin: 0 0 20px;
+        }
+
+        .cookie-consent-buttons {
+            text-align: right;
+        }
+
+        .btn-cookie {
+            padding: 5px 10px;
+            margin-left: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -162,5 +220,45 @@
         </li>
         <li><a href="login.html">Login</a></li>
     </ul>
+    <div id="cookieConsentPopup" class="cookie-consent-popup">
+        <div class="cookie-consent-content">
+            <p>Cookies legal stuff here idk what else to put for a placeholder</p>
+            <div class="cookie-consent-buttons">
+                <button id="btnAcceptCookies" class="btn-cookie">Continue</button>
+                <button id="btnNecessaryCookies" class="btn-cookie">Only Use Necessary</button>
+            </div>
+        </div>
+    </div>
+    <!-- Cookie Consent JavaScript -->
+    <script>
+        window.onload = function() {
+            const consentPropertyName = 'user_cookie_consent';
+            const shouldShowPopup = () => !localStorage.getItem(consentPropertyName);
+            const saveToLocalStorage = () => localStorage.setItem(consentPropertyName, true);
+
+            const acceptFn = () => {
+                saveToLocalStorage();
+                hidePopup();
+            };
+            const necessaryFn = () => {
+                alert('Only necessary cookies will be used.');
+                saveToLocalStorage();
+                hidePopup();
+            };
+
+            const hidePopup = () => {
+                document.getElementById('cookieConsentPopup').style.display = 'none';
+            };
+
+            document.getElementById('btnAcceptCookies').addEventListener('click', acceptFn);
+            document.getElementById('btnNecessaryCookies').addEventListener('click', necessaryFn);
+
+            if (shouldShowPopup()) {
+                document.getElementById('cookieConsentPopup').style.display = 'block';
+            }
+        };
+    </script>
+
+      
 </body>
 </html>
