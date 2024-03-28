@@ -18,7 +18,7 @@
         trackBy: 'seconds',
         callback: function(data) { /* callback denotes your data tracking is real-time */
             console.log(data);
-            var endPointUrl = 'http://example.com' //Replace with your actual backend API URL http://localhost/tos
+            var endPointUrl = 'http://localhost:8000/track-tos/'; //Replace with your actual backend API URL
             if (data && data.trackingType) {
                 if (data.trackingType == 'tos') {
                     if (Tos.verifyData(data) != 'valid') {
@@ -41,6 +41,7 @@
         Tos = new TimeOnSiteTracker(config);
     }
     </script>
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
