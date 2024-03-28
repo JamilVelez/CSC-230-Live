@@ -2,8 +2,10 @@
 
 from django.urls import path
 from pages import views
+from .views import tos_tracker_view
 
 urlpatterns = [
+    path('track-tos/', tos_tracker_view, name='track-tos'),
     path("", views.home, name='home'),
     path("login/", views.LoginPageView, name='login'),
     path("BigJohn/", views.BigJohn, name='BigJohn'),
