@@ -115,33 +115,42 @@
             new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
         }
     </script>
-    <script>
-        function linkToUsername() {
-            // Mapping of child names to usernames
-            const usernames = {
-                "Alice": "alice123",
-                "Bob": "bobby456",
-                // Add more mappings as needed
-            };
-    
-            // Get the child's name from the input field
-            const childName = document.getElementById("child_name").value;
-    
-            // Lookup the username
-            const username = usernames[childName];
-    
-            // Check if a username was found
-            if (username) {
-                // Redirect to a specific URL or perform any action with the username
-                // For demonstration, we're just alerting the username
-                alert("Username for " + childName + " is: " + username);
-                // You could redirect with window.location.href = 'someUrl?username=' + username;
-            } else {
-                // Handle case where no username is found
-                alert("Child name not found. Please check the name and try again.");
-            }
-        }
-    </script>
+  <script>
+    function linkToUsername() {
+        // Assuming the user's username is obtained from a user session (needs backend support)
+        const currentUsername = "currentUser"; // Placeholder: replace with actual logic to get the logged-in user's username
+        
+        // Get the child's name from the input field
+        const childName = document.getElementById("child_name").value;
+        
+        // Save the child's name linked to the current username in localStorage for demonstration
+        localStorage.setItem(childName, currentUsername);
+
+        // Pseudocode for saving to server
+        /*
+            fetch('/saveChildName', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ childName: childName, username: currentUsername }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        */
+        
+        alert("Child's name saved successfully for " + currentUsername);
+        
+        // Prevent form from submitting in this demo
+        return false;
+    }
+</script>
+
     
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
