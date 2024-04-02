@@ -17,7 +17,7 @@
         .header {
             position: relative;
             height: 30vh; /* Adjust height as needed */
-            background-image: url('.png'); /* Set the image as background */
+            background-image: url('./ExhibImages/cycle.jpg'); /* Set the image as background */
             background-size: cover; /* Make sure the background image covers the entire header */
             background-position: center; /* Center the background image */
             background-repeat: no-repeat; /* Prevent the background image from repeating */
@@ -26,8 +26,8 @@
 
         .home-button {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 50px;
+            left: 1px;
             width: 100px;
             height: 100px;
             border: 1px solid black;
@@ -38,10 +38,26 @@
             background-repeat: no-repeat;
             text-indent: -9999px;
             color: transparent; /* Hide text */
+            transition: transform 0.3s ease-in-out;
         }
 
         .home-button:hover {
             background-color: #9b51e0; 
+            transform: scale(1.1); 
+        }
+        .bluetext {
+            color: blue;
+            font-size: 30;
+            font-size: larger;
+            
+        }
+        .info {
+            color: dark;
+            text-align: center;
+            font-size: 18px;
+            margin: 0 auto;
+            max-width: 800px;
+            padding : 0 20px 20px;
         }
 
         .title-box {
@@ -86,13 +102,12 @@
         <a href="homepage.html">
             <div class="home-button"></div>
         </a>
-        <div class="title-box">
-            <h1 class="title">Water's Journey</h1> <!-- Title text inside the box -->
-        </div>
+        
     </div>
     
     <div class="frame">
-        <h2>Enter Exhibit Info</h2>
+        <p class = "info"><b> <sapn class="bluetext">Water cycle exhibit </sapn>is a section of the museum that illustrates the cycle of water, 
+            its importance to our planet, and ways to conserve this precious resource, combining environmental education with engaging fun.</b></p>
         <!-- Second frame content goes here -->
         <!-- You can add more content or input boxes here -->
     </div>
