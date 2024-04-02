@@ -7,9 +7,9 @@
     <title>GCM-Prototype</title>
     <style>
         body, html {
-            background-color: #6dcff6;
             font-family: Arial, sans-serif;
             margin: 0;
+            background-color: #6dcff6;
             padding: 0;
             overflow-x: hidden; /* Prevent horizontal scrolling */
         }
@@ -17,31 +17,47 @@
         .header {
             position: relative;
             height: 30vh; /* Adjust height as needed */
-            background-image: url('.png'); /* Set the image as background */
+            background-image: url('./ExhibImages/firehouse2.jpg'); /* Set the image as background */
             background-size: cover; /* Make sure the background image covers the entire header */
             background-position: center; /* Center the background image */
             background-repeat: no-repeat; /* Prevent the background image from repeating */
             overflow: hidden; /* Prevent content from overflowing */
+            
         }
 
         .home-button {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 50px;
+            left: 1px;
             width: 100px;
             height: 100px;
             border: 1px solid black;
             padding: 10px;
-            background-color: #6dcff6;
             background-image: url('HomeButton.png'); 
             background-size: cover; 
             background-repeat: no-repeat;
             text-indent: -9999px;
             color: transparent; /* Hide text */
+            transition: transform 0.3s ease-in-out;
         }
 
         .home-button:hover {
             background-color: #9b51e0; 
+            transform: scale(1.1);
+        }
+        .redtext {
+            color: red;
+            font-size: 30;
+            font-size: larger;
+            
+        }
+        .info {
+            color: dark;
+            text-align: center;
+            font-size: 18px;
+            margin: 0 auto;
+            max-width: 800px;
+            padding : 0 20px 20px;
         }
 
         .title-box {
@@ -54,7 +70,7 @@
             border: 2px solid black; /* Black border */
             z-index: 2; /* Ensure box is above the image */
         }
-
+       
         .title {
             font-size: 36px; 
             color: #000; /* Text color */
@@ -86,13 +102,13 @@
         <a href="homepage.html">
             <div class="home-button"></div>
         </a>
-        <div class="title-box">
-            <h1 class="title">Fire House</h1> <!-- Title text inside the box -->
-        </div>
     </div>
     
     <div class="frame">
-        <h2>Enter Exhibit Info</h2>
+        <p class="info"><b>The <span class = "redtext">Firehouse exhibit </span>in Safety Village offers a thrilling insight 
+            into the life of firefighters. Children can explore a mock fire engine, 
+            learn about fire safety, and dress up in firefighting gear, fostering both 
+            fun and educational experiences.</b></p>
         <!-- Second frame content goes here -->
         <!-- You can add more content or input boxes here -->
     </div>
