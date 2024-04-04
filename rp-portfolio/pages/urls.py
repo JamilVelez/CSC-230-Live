@@ -2,10 +2,9 @@
 
 from django.urls import path
 from pages import views
-from .views import tos_tracker_view
+
 
 urlpatterns = [
-    path('track-tos/', tos_tracker_view, name='track-tos'),
     path("", views.home, name='home'),
     path("login/", views.LoginPageView, name='login'),
     path("BigJohn/", views.BigJohn, name='BigJohn'),
@@ -29,5 +28,6 @@ urlpatterns = [
     path("Temp/", views.Temp, name='Temp'),
     path("FamilyPlayProject/", views.FamilyPlayProject, name='FamilyPlayProject'),
     path("Publix/", views.Publix, name='Publix'),
+    path('', views.post_list, name='post_list'),
 ]
 
