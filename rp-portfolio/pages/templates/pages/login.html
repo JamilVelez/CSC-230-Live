@@ -1,35 +1,29 @@
-
-{%block content%}
+{% extends "base.html" %}  {# Ensure this extends your base template #}
+{% block content %}
 <!DOCTYPE html>
 <html>
-
 <head>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #6dcff6;
         }
-
         .imgcontainer {
             text-align: center;
             margin: 24px 0 12px 0;
         }
-
         .avatar {
             width: 100px;
             height: 100px;
             border-radius: 50%;
         }
-
         .container {
             padding: 16px;
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
-        input[type=text],
-        input[type=password] {
+        input[type=email], input[type=password] {
             width: 100%;
             padding: 12px 20px;
             margin: 8px 0;
@@ -38,11 +32,9 @@
             box-sizing: border-box;
             border-radius: 5px;
         }
-
         input[type=checkbox] {
             margin-bottom: 16px;
         }
-
         button {
             background-color: #4CAF50;
             color: white;
@@ -53,32 +45,30 @@
             cursor: pointer;
             width: 100%;
         }
-
         button:hover {
             opacity: 0.8;
         }
-
         a {
             color: dodgerblue;
         }
     </style>
 </head>
-
 <body>
-    <form action="action_page.php" method="post">
+    <form action="{% url 'login' %}" method="post">  {# Adjusted action to use Django URL name for login #}
+        {% csrf_token %}  {# Adds CSRF token to form for security #}
         <div class="imgcontainer">
-            <a href="homepage.html">
-                <img src="glazer.png" alt="Avatar" class="avatar">
+            <a href="{% url 'home' %}">  {# Assuming you have a named URL for 'home' #}
+                <img src="{% static 'glazer.png' %}" alt="Avatar" class="avatar">  {# Use Django static tag to reference images #}
             </a>
         </div>
 
         <div class="container">
-            <input type="text" placeholder="Username" name="uname" required>
+            <input type="email" placeholder="Email" name="email" required>  {# Changed to email input #}
 
-            <p><input type="password" placeholder="Password" name="psw" required></p>
+            <p><input type="password" placeholder="Password" name="password" required></p>
             <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
-                <span class="psw"><a href="#">Forgot?</a></span>
+                <span class="psw"><a href="{% url 'django.contrib.auth.views.password_reset' %}">Forgot?</a></span>  {# Link to password reset, if you have it set up #}
             </label>
         </div>
 
@@ -87,7 +77,5 @@
         </div>
     </form>
 </body>
-
 </html>
-{%endblock%}
-
+{% endblock %}
