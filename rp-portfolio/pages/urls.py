@@ -2,6 +2,7 @@
 
 from django.urls import path
 from pages import views
+from django.contrib import admin
 
 
 urlpatterns = [
@@ -33,5 +34,8 @@ urlpatterns = [
     path("Play/", views.Play, name='Play'),
     path("Resources/", views.Resources, name='Resources'),
     path('', views.post_list, name='post_list'),
+    path("PartyPlace/", views.PartyPlace, name='PartyPlace'),
+    path('admin/', admin.site.urls),
+    
 ]
 

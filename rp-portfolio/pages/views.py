@@ -36,6 +36,8 @@ def OceanSandbox(request):
     return render(request, "pages/OceanSandbox.html", {})
 def PizzaPlace(request):
     return render(request, "pages/PizzaPlace.html", {})
+def PartyPlace(request):
+    return render(request, "pages/PartyPlace.html", {})
 def Publix(request):
     return render(request, "pages/Publix.html", {})
 def Theater(request):
