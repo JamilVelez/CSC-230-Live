@@ -1,7 +1,7 @@
-{% extends "base.html" %}  {# Ensure this extends your base template #}
+{% load static %}
 {% block content %}
 <!DOCTYPE html>
-<html>
+<html lang="">
 <head>
     <style>
         body {
@@ -23,7 +23,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        input[type=email], input[type=password] {
+        input[type=text], input[type=password] {
             width: 100%;
             padding: 12px 20px;
             margin: 8px 0;
@@ -51,29 +51,50 @@
         a {
             color: dodgerblue;
         }
+        .error { 
+            color: red;
+            margin-bottom: 15px;
+        }
     </style>
+    <title></title>
 </head>
 <body>
-    <form action="{% url 'login' %}" method="post">  {# Adjusted action to use Django URL name for login #}
-        {% csrf_token %}  {# Adds CSRF token to form for security #}
+    <form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
         <div class="imgcontainer">
-            <a href="{% url 'home' %}">  {# Assuming you have a named URL for 'home' #}
-                <img src="{% static 'glazer.png' %}" alt="Avatar" class="avatar">  {# Use Django static tag to reference images #}
+            <a href="{% url 'home' %}">
+                <img src="{% static 'HomeButton.png' %}" alt="Avatar" class="avatar">
             </a>
         </div>
 
         <div class="container">
-            <input type="email" placeholder="Email" name="email" required>  {# Changed to email input #}
+            <!-- Display messages here -->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="error">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
 
-            <p><input type="password" placeholder="Password" name="password" required></p>
+            <label>
+                <input type="text" placeholder="Username" name="username" required>
+            </label>
+
+            <p><label>
+                <input type="password" placeholder="Password" name="password" required>
+            </label></p>
+
             <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
-                <span class="psw"><a href="{% url 'django.contrib.auth.views.password_reset' %}">Forgot?</a></span>  {# Link to password reset, if you have it set up #}
+                <a href="{% url 'password_reset' %}">Forgot?</a>
             </label>
         </div>
 
         <div class="container" style="background-color:#f1f1f1">
             <button type="submit">Login</button>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1; text-align:center;">
+            <p>Don't have an account? <a href="{% url 'register' %}">Sign up</a></p>
         </div>
     </form>
 </body>
