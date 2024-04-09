@@ -70,30 +70,49 @@
             background-repeat: no-repeat; /* Prevent the background image from repeating */
             overflow: hidden; /* Prevent content from overflowing */
         }
-        .map-section {
+    .map-section {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center; /* Centers the content vertically */
             margin-top: 20px;
+            width: 100%; /* Use 100% of the width */
+            height: 100vh; /* Optionally set a minimum height */
         }
-
+        
         .level-buttons {
             display: flex;
             justify-content: center;
             gap: 10px; /* Space between buttons */
+            width: 100%; /* Use 100% of the width */
         }
-
+        
         .map-container {
-            width: 90vw;
-            height: 28vh;
+            width: 100%; /* Use the full width */
             border: 1px solid #3BBFB9;
+            position: relative;
+            overflow-y: hidden;
         }
-
+        
         .map-container iframe {
             width: 100%;
-            height: 100%;
+            height: 100vh; /* Set a minimum height, or make it responsive to the content */
             border: none;
         }
+        
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            .level-buttons {
+                flex-direction: column; /* Stack buttons vertically on smaller screens */
+                gap: 5px; /* Reduce gap */
+            }
+        
+            .map-container iframe {
+                height: 50vh; /* Adjust the height on smaller screens if needed */
+            }
+        }
+
+
 
         .imgcontainer {
             text-align: center;
@@ -358,16 +377,16 @@
             <button onclick="showLevel('Level3')">Level 3</button>
         </div>
 
-        <div class="map-container" id="level1-container" style="display: block;">
-            <iframe src="Interactive Maps/Level1/interactive_map/dist/index1.html"></iframe>
-        </div>
-        <div class="map-container" id="level2-container" style="display: none;">
-            <iframe src="Interactive Maps/Level2/level2/dist/index.html"></iframe>
-        </div>
-        <div class="map-container" id="level3-container" style="display: none;">
-            <iframe src="Interactive Maps/Level3/interacrtivemap_3/dist/index.html"></iframe>
-        </div>
-    </div>
+   <div class="map-container" id="level1-container" style="display: block;">
+    <iframe src="{% static 'maps/Level1/interactive_map/dist/index1.html' %}"></iframe>
+</div>
+<div class="map-container" id="level2-container" style="display: none;">
+    <iframe src="{% static 'maps/Level2/level2/dist/index.html' %}"></iframe>
+</div>
+<div class="map-container" id="level3-container" style="display: none;">
+    <iframe src="{% static 'maps/Level3/level3/dist/index.html' %}"></iframe>
+</div>
+
 
     <div id="cookieConsentPopup" class="cookie-consent-popup">
         <div class="cookie-consent-content">
@@ -414,8 +433,10 @@
 
             // Show the selected map container
             var selectedContainer = document.getElementById(level.toLowerCase() + '-container');
+
             if (selectedContainer) {
                 selectedContainer.style.display = 'block';
+                
             } else {
                 console.error("Container not found for level:", level);
             }

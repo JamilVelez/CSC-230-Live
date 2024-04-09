@@ -1,9 +1,6 @@
 $(document).ready(function(){
   $(".hide").hide();
-  $(".marker-cafe").click(function(){
-     $(".hide").hide();
-    $(".cafe-txt").fadeIn(300);
-  });
+
 
   $(".marker-guest_services").click(function(){
      $(".hide").hide();

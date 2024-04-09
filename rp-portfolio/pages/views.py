@@ -63,6 +63,14 @@ def Play(request):
 def Resources(request):
     return render(request, "pages/Resources.html", {})
 
-    
-    
+#Map
+
+
+def GuestServices(request):
+    return render(request, "pages/GuestServices.html", {})
+def TugBoats(request):
+    return render(request, 'pages/Tugboats.html')
+
+def Kidsport(request):
+    return render(request, 'pages/Kidsport.html')
 
