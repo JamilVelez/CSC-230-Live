@@ -1,6 +1,6 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-<!--TimeOnSite Tracking Script-->
 <script src="tosTracker.js"></script>
 <head>
     <meta charset="utf-8">
@@ -34,7 +34,7 @@
             border: 1px solid black;
             padding: 10px;
             background-color: #6dcff6;
-            background-image: url('HomeButton.png'); 
+            background-image: url('{% static "HomeButton.png" %}'); 
             background-size: cover; 
             background-repeat: no-repeat;
             text-indent: -9999px;
@@ -84,7 +84,7 @@
 <body>
     <div id="google_translate_element"></div>
     <div class="header">
-        <a href="homepage.html">
+        <a href="{% url 'home' %}">
             <div class="home-button"></div>
         </a>
         <div class="title-box">

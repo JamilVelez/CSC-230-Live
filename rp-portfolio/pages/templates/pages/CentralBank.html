@@ -1,6 +1,6 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-<!--TimeOnSite Tracking Script-->
 <script src="tosTracker.js"></script>
 <head>
     <meta charset="utf-8">
@@ -34,7 +34,7 @@
             border: 1px solid black;
             padding: 10px;
             background-color: #6dcff6;
-            background-image: url('HomeButton.png'); 
+            background-image: url('{% static "HomeButton.png" %}'); 
             background-size: cover; 
             background-repeat: no-repeat;
             text-indent: -9999px;
@@ -43,6 +43,20 @@
 
         .home-button:hover {
             background-color: #9b51e0; 
+        }
+        .greentext {
+            color: orange;
+            font-size: 30;
+            font-size: larger;
+            
+        }
+        .info {
+            color: dark;
+            text-align: center;
+            font-size: 18px;
+            margin: 0 auto;
+            max-width: 800px;
+            padding : 0 20px 20px;
         }
 
         .title-box {
@@ -93,7 +107,9 @@
     </div>
     
     <div class="frame">
-        <h2>Enter Exhibit Info</h2>
+        <p class="info"><b>The <sapn class="greentext">Central Bank exhibit</sapn>, children get 
+            hands-on experience with money management, learning about saving, 
+            spending, and the basics of banking with fun and imaginary play.</b></p>
         <!-- Second frame content goes here -->
         <!-- You can add more content or input boxes here -->
     </div>
@@ -102,10 +118,19 @@
         <!-- First frame content goes here -->
         <h2>Enter Play Type:</h2>
         <form action="submit.php" method="post" class="text-box">
-            <input type="text" name="userdata" placeholder="What type of play is your child demonstrating?" required>
+            <select name="userdata" required>
+                <option value="" disabled selected>Select play type</option>
+                <option value="Physical">Physical Play</option>
+                <option value="Socio-Emotional">Socio-Emotional Play</option>
+                <option value="Sensory">Sensory Play</option>
+                <option value="Cognitive">Cognitive Play</option>
+                <option value="Communication">Communication Play</option>
+                <!-- Add more options as needed -->
+            </select>
             <button type="submit">Submit</button>
         </form>
     </div>
+
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
