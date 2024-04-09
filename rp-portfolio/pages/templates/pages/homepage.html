@@ -16,37 +16,10 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-<!-- CODE FOR TIMEONSITE TRACKER -->
-<script>
-    var config = {
-        // track page by seconds. Default tracking is by milliseconds
-        trackBy: 'seconds',
-        callback: function(data) { /* callback denotes your data tracking is real-time */
-            console.log(data);
-            var endPointUrl = 'http://localhost:8000/track-tos/'; //Replace with your actual backend API URL
-            if (data && data.trackingType) {
-                if (data.trackingType == 'tos') {
-                    if (Tos.verifyData(data) != 'valid') {
-                        console.log('Data abolished!');
-                        return; 
-                    }
-                }
-    
-                // make use of sendBeacon if this API is supported by your browser.
-                if (navigator && typeof navigator.sendBeacon === 'function') {
-                    data.trasferredWith = 'sendBeacon';
-                    var blob = new Blob([JSON.stringify(data)], {type : 'application/json'});
-                    navigator.sendBeacon(endPointUrl, blob);
-                }
-            }
-        }
-    };
-    var Tos;
-    if (TimeOnSiteTracker) {
-        Tos = new TimeOnSiteTracker(config);
-    }
-    </script>
-    
+
+<!--TimeOnSite Tracking Script-->
+<script src="tosTracker.js"></script>
+<head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
