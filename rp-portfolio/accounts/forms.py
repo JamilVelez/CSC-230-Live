@@ -1,21 +1,21 @@
-from django import forms
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+# Inside your app's forms.py file
 
-class UserSignUpForm(UserCreationForm):
-    email = forms.EmailField(max_length=254, help_text='Required. Provide a valid email address.')
+from django import forms
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from .models import UserProfile
+
+
+class UserRegisterForm(UserCreationForm):
+    email = forms.EmailField()
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password1', 'password2',)
-
-class AdminSignUpForm(UserCreationForm):
-    class Meta(UserSignUpForm.Meta):
-        model = User
+        fields = ['username', 'email', 'password1', 'password2']
 
     def save(self, commit=True):
         user = super().save(commit=False)
-        user.is_staff = True  # Grant access to the admin site
+        user.email = self.cleaned_data['email']
         if commit:
             user.save()
         return user
