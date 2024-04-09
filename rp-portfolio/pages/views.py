@@ -52,6 +52,15 @@ def Temp(request):
     return render(request, "pages/TempExhibit.html", {})
 def FamilyPlayProject(request):
     return render(request, "pages/FamilyPlay.html", {})
+def GlobalCafe(request):
+    return render(request, "pages/GlobalCafe.html", {})
+def SafetyVillage(request):
+    return render(request, "pages/SafetyVillage.html", {})
+def Play(request):
+    return render(request, "pages/Play.html", {})
+def Resources(request):
+    return render(request, "pages/Resources.html", {})
+
     
     
 

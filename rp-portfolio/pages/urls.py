@@ -28,6 +28,10 @@ urlpatterns = [
     path("Temp/", views.Temp, name='Temp'),
     path("FamilyPlayProject/", views.FamilyPlayProject, name='FamilyPlayProject'),
     path("Publix/", views.Publix, name='Publix'),
+    path("GlobalCafe/", views.GlobalCafe, name='GlobalCafe'),
+    path("SafetyVillage/", views.SafetyVillage, name='SafetyVillage'),
+    path("Play/", views.Play, name='Play'),
+    path("Resources/", views.Resources, name='Resources'),
     path('', views.post_list, name='post_list'),
 ]
 
