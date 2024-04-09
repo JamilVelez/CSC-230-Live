@@ -1,6 +1,7 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-
+<script src="tosTracker.js"></script>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -17,7 +18,7 @@
         .header {
             position: relative;
             height: 30vh; /* Adjust height as needed */
-            background-image: url('./ExhibImages/BigJohn.png'); /* Set the image as background */
+            background-image: url('{% static "BigJohn.png" %}'); /* Set the image as background */
             background-size: cover; /* Make sure the background image covers the entire header */
             background-position: center; /* Center the background image */
             background-repeat: no-repeat; /* Prevent the background image from repeating */
@@ -32,7 +33,7 @@
             border: 1px solid black;
             padding: 10px;
             background-color: #6dcff6;
-            background-image: url('HomeButton.png'); 
+            background-image: url('{% static "HomeButton.png" %}'); 
             background-size: cover; 
             background-repeat: no-repeat;
             text-indent: -9999px;
@@ -105,7 +106,7 @@
 <body>
     <div id="google_translate_element"></div>
     <div class="header">
-        <a href="homepage.html">
+        <a href="{% url 'home' %}">
             <div class="home-button"></div>
         </a>
     </div>

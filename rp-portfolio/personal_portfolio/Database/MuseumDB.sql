@@ -135,51 +135,7 @@ VALUES
     (4, 'Cognitive', 'Activities that stimulate cognitive development including problem-solving, memory, and reasoning.'),
     (5, 'Communication', 'Activities that focus on language development, including speaking, listening, and understanding.');
 
-INSERT INTO Users (UserID, Username, Email, Password)
-VALUES
-    (1, 'john_doe', 'john@example.com', 'password123'),
-    (2, 'jane_smith', 'jane@example.com', 'letmein'),
-    (3, 'alex_carter', 'alex@example.com', 'securepass'),
-    (4, 'emily_jones', 'emily@example.com', 'p@ssw0rd'),
-    (5, 'mike_wilson', 'mike@example.com', '123456'),
-    (6, 'sarah_brown', 'sarah@example.com', 'abc123'),
-    (7, 'david_clark', 'david@example.com', 'password456'),
-    (8, 'laura_taylor', 'laura@example.com', 'ilovecats'),
-    (9, 'chris_evans', 'chris@example.com', 'captainamerica'),
-    (10, 'amanda_miller', 'amanda@example.com', 'qwerty');
 
-INSERT INTO Children (ChildID, ChildName, Age, ParentUserID)
-VALUES
-    (1, 'Emma', 5, 1), -- ParentUserID references UserID from the Users table
-    (2, 'Noah', 4, 2),
-    (3, 'Olivia', 6, 3),
-    (4, 'Liam', 5, 4),
-    (5, 'Ava', 4, 5),
-    (6, 'William', 6, 6),
-    (7, 'Sophia', 5, 7),
-    (8, 'James', 4, 8),
-    (9, 'Isabella', 6, 9),
-    (10, 'Benjamin', 5, 10);
-
-INSERT INTO ChildInteraction (InteractionID, ChildID, ExhibitID, ActivityID, InteractionDate, InteractionTime, DurationMinutes)
-VALUES
-    (1, 1, 1, 1, '2024-03-19', '09:30:00', 30),
-    (2, 2, 3, 5, '2024-03-19', '10:00:00', 45),
-    (3, 3, 6, 10, '2024-03-19', '11:00:00', 20),
-    (4, 4, 10, 15, '2024-03-19', '11:30:00', 25),
-    (5, 5, 14, 20, '2024-03-19', '12:00:00', 40),
-    (6, 6, 16, 25, '2024-03-19', '13:00:00', 35),
-    (7, 7, 2, 30, '2024-03-19', '13:30:00', 15),
-    (8, 8, 5, 35, '2024-03-19', '14:00:00', 50),
-    (9, 9, 9, 38, '2024-03-19', '14:30:00', 30),
-    (10, 10, 12, 22, '2024-03-19', '15:00:00', 60);
-
-INSERT INTO TimeStamp(TimeStampID, CurrentTime, DateTime, UserID, ChildID, ExhibitID)
-VALUES
-    (1, NOW(), NOW(), 1, 1, 1),
-    (2, NOW(), NOW(), 2, 2, 2),
-    (3, NOW(), NOW(), 3, 3, 3),
-    (4, NOW(), NOW(), 4, 4, 4);
 
 
 
