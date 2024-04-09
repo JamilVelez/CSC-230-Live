@@ -284,6 +284,12 @@
 </head>
 <body>
     <div class="imgcontainer"></div>
+    <div>
+        {% if user.is_authenticated %}
+            <p>Welcome, {{ user.username }}!</p>
+            <a href="{% url 'logout' %}?next={{ request.path }}">Logout</a> <!-- Ensure you have a URL named 'logout' --><!-- Adjust based on your URL name for registration -->
+        {% endif %}
+    </div>
 
     <div class="hamburger-menu">
         <div class="menu-icon" onclick="toggleMenu()">
@@ -336,6 +342,7 @@
                 <a href="https://glazermuseum.org/deai/">DEAI Statement</a> 
                 <a href="https://glazermuseum.org/contact/">Contact</a>
             </div>
+            <a href="{% url 'login' %}">Login</a>
             <a href="{% url 'admin:index' %}">Login</a>
             <!-- Add your "About" section here as previously -->
         </div>
