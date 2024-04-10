@@ -58,7 +58,6 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            overflow: hidden;
         }
 
         .header {
@@ -80,6 +79,7 @@
             justify-content: flex-start; 
             width: 100%; /* Use 100% of the width */
             height: 100vh; /* Optionally set a minimum height */
+             overflow: hidden;
         }
 
         .level-buttons {
@@ -106,6 +106,11 @@
             overflow: hidden;
            
         }
+        
+         .map-container .no-scroll {
+            pointer-events: none; /* Optional: Disables mouse events on the iframe */
+            overflow: hidden; /* Ensures no internal scrolling is possible */
+        }
 
         /* Responsive adjustments for smaller screens */
         @media (max-width: 600px) {
@@ -122,9 +127,12 @@
 
             .map-container iframe {
                 height: 50vh;
+                 
+                
                 
             }
         }
+        
 
 
 
@@ -250,7 +258,11 @@
             top: 50px;
             left: 0;
             width: 100%;
+            height: auto; /* Adjust height to content */
+            max-height: 100vh; /* Prevent exceeding viewport height */
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1000;
+            overflow-y: auto
         }
 
         .menu-content a {
@@ -275,13 +287,15 @@
         }
        
         .menu-content a.dropdown-toggle {
-            cursor: pointer; /* Makes it clear it's clickable */
+            cursor: pointer;
+            /* Makes it clear it's clickable */
         }
         /* Ensures nested menus are initially hidden */
         .nested-menu {
             display: none;
             position: relative;
-            padding-left: 20px; /* Indent nested menu items for visual hierarchy */
+            padding-left: 20px;
+            /* Indent nested menu items for visual hierarchy */
         }
         .nested-menu a {
             display: block; /* Ensure proper block layout */
@@ -295,7 +309,8 @@
         /* Style for second-level nested menus */
         .sub-nested-menu {
             display: none;
-            padding-left: 20px; /* Further indentation for sub-level items */
+            padding-left: 20px;
+            overflow-y: auto/* Further indentation for sub-level items */
         }
         
        .frame {
@@ -314,6 +329,10 @@
             max-width: 800px;
             padding : 0 20px 20px;
         }
+       .no-scroll {
+           overflow: hidden;
+}
+       
 
         
 
@@ -399,7 +418,7 @@
         </div>
 
    <div class="map-container" id="level1-container" style="display: block;">
-    <iframe src="{% static 'maps/Level1/interactive_map/dist/index1.html' %}"></iframe>
+    <iframe src="{% static 'maps/Level1/interactive_map/dist/index1.html' %}" ></iframe>
 </div>
 <div class="map-container" id="level2-container" style="display: none;">
     <iframe src="{% static 'maps/Level2/level2/dist/index.html' %}"></iframe>
@@ -463,6 +482,7 @@
                 console.error("Container not found for level:", level);
             }
         }
+     
     </script>
 
 
@@ -475,7 +495,13 @@
 
         function toggleMenu() {
             // Toggle menu display on click
+            var menu = document.getElementById('menuContent');
             menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+            if(menu.style.display === 'flex'){
+                document.body.classList.add('no-scroll');
+            } else {
+                document.body.classList.remove('no-scroll');
+            }
         }
 
         menuIcon.onclick = function(event) {
