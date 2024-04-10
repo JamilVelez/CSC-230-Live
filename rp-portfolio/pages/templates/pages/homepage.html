@@ -58,12 +58,13 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            overflow: hidden;
         }
 
         .header {
             position: relative;
-            height: 20vh; /* Adjust height as needed */
-            width: 80vh; 
+            height: 10vh; /* Adjust height as needed */
+            width: 100%; 
             background-image: url('{% static "1.jpg" %}'); /* Set the image as background */
             background-size: cover; /* Make sure the background image covers the entire header */
             background-position: center; /* Center the background image */
@@ -71,11 +72,12 @@
             overflow: hidden; /* Prevent content from overflowing */
         }
     .map-section {
+            margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* Centers the content vertically */
-            margin-top: 20px;
+            justify-content: flex-start; 
             width: 100%; /* Use 100% of the width */
             height: 100vh; /* Optionally set a minimum height */
         }
@@ -88,27 +90,39 @@
         }
 
         .map-container {
-            width: 100%; /* Use the full width */
+            width: 100%;
+            height: 100%;
+            margin:0;
+            padding:0;/* Use the full width */
             border: 1px solid #3BBFB9;
             position: relative;
-            overflow-y: hidden;
+            overflow: hidden;
         }
 
         .map-container iframe {
             width: 100%;
-            height: 100vh; /* Set a minimum height, or make it responsive to the content */
+            height: 100%; /* Set a minimum height, or make it responsive to the content */
             border: none;
+            overflow: hidden;
+           
         }
 
         /* Responsive adjustments for smaller screens */
         @media (max-width: 600px) {
-            .level-buttons {
-                flex-direction: column; /* Stack buttons vertically on smaller screens */
-                gap: 5px; /* Reduce gap */
-            }
+            .level-buttons, .map-container iframe{
+               width: 100%;
+                max-width: 100%;
+            }  
+            
+            @media (max-width: 600px) {
+                .map-section {
+                margin-top: 0;
+        }
+    }
 
             .map-container iframe {
-                height: 50vh; /* Adjust the height on smaller screens if needed */
+                height: 50vh;
+                
             }
         }
 
@@ -124,7 +138,7 @@
             height: auto;
         }
 
-        ul#horizontal, #horizontal ul {
+        ul #horizontal, #horizontal ul {
             margin: 0;
             padding: 0;
             list-style-type: none;
@@ -259,20 +273,7 @@
         .menu-content a:hover, .dropdown-content a:hover {
             background-color: #ddd;
         }
-        .dropdown-content {
-            display: none;
-            flex-direction: column;
-            background-color: #f9f9f9;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            padding-left: 20px;
-        }
-        .dropdown-click {
-            cursor: pointer;
-        }
-        
-        .dropdown-content.active {
-            display: flex;
-        }
+       
         .menu-content a.dropdown-toggle {
             cursor: pointer; /* Makes it clear it's clickable */
         }
@@ -295,6 +296,23 @@
         .sub-nested-menu {
             display: none;
             padding-left: 20px; /* Further indentation for sub-level items */
+        }
+        
+       .frame {
+            background-color: white; /* Set background color to white */
+            padding: 30px; /* Add padding to create space inside the box */
+            border: 1px solid black; 
+            width: 70%; /* Adjust width as needed */
+            margin: 0 auto; /* Center horizontally */
+            margin-top: 20px;
+       
+       .info {
+            color: dark;
+            text-align: center;
+            font-size: 18px;
+            margin: 0 auto;
+            max-width: 800px;
+            padding : 0 20px 20px;
         }
 
         
@@ -323,7 +341,7 @@
             <div class="nested-menu" id="exhibitsDropdown">
                 <a class="dropdown-toggle" onclick="toggleDropdown('level1')">Level 1</a>
                 <div class="sub-nested-menu" id="level1">
-                    <a href="{% url 'https://72839.blackbaudhosting.com/72839/tickets?tab=3&txobjid=1b87ef14-b89d-4a5c-803f-79124cc2bcd8' %}">Guest Services</a>
+                    <a href="https://72839.blackbaudhosting.com/72839/tickets?tab=3&txobjid=1b87ef14-b89d-4a5c-803f-79124cc2bcd8">Guest Services</a>
                     <a href="{% url 'TugBoats' %}">Tugboats Tots</a>
                     <a href="{% url 'KidsPort' %}">KidsPort</a>
                 </div>
@@ -365,6 +383,10 @@
             <a href="{% url 'admin:index' %}">Login(Admin)</a>
             <!-- Add your "About" section here as previously -->
         </div>
+    </div>
+    
+    <div class="frame">
+        <p class="info"><b>Welcome to the Glazier Children's Musuem! Here, your child can LEARN through PLAY.</b></p>
     </div>
 
 
@@ -434,7 +456,6 @@
 
             // Show the selected map container
             var selectedContainer = document.getElementById(level.toLowerCase() + '-container');
-
             if (selectedContainer) {
                 selectedContainer.style.display = 'block';
 
