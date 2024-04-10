@@ -323,8 +323,7 @@
             <div class="nested-menu" id="exhibitsDropdown">
                 <a class="dropdown-toggle" onclick="toggleDropdown('level1')">Level 1</a>
                 <div class="sub-nested-menu" id="level1">
-                    <a href="{% url 'GlobalCafe' %}">Global Cafe</a>
-                    <a href="{% url 'GuestServices' %}">Guest Services</a>
+                    <a href="{% url 'https://72839.blackbaudhosting.com/72839/tickets?tab=3&txobjid=1b87ef14-b89d-4a5c-803f-79124cc2bcd8' %}">Guest Services</a>
                     <a href="{% url 'TugBoats' %}">Tugboats Tots</a>
                     <a href="{% url 'KidsPort' %}">KidsPort</a>
                 </div>
@@ -347,7 +346,7 @@
                 <a class="dropdown-toggle" onclick="toggleDropdown('level3')">Level 3</a>
                 <div class="sub-nested-menu" id="level3">
                     <a href="{% url 'BigJohn' %}">Big John</a>
-                    <a href="{% url 'LearningCenter' %}">Learning Center</a>
+                    
                     
 
                     <!-- Add more Level 3 links here -->
@@ -384,7 +383,7 @@
     <iframe src="{% static 'maps/Level2/level2/dist/index.html' %}"></iframe>
 </div>
 <div class="map-container" id="level3-container" style="display: none;">
-    <iframe src="{% static 'maps/Level3/level3/dist/index.html' %}"></iframe>
+    <iframe src="{% static 'maps/Level3/level3/dist/index3.html' %}"></iframe>
 </div>
 
 
@@ -426,8 +425,8 @@
     <script>
         function showLevel(level) {
             // Hide all map containers
-            
-            
+
+
             var mapContainers = document.querySelectorAll('.map-container');
             mapContainers.forEach(function(container) {
                 container.style.display = 'none';
