@@ -1,6 +1,8 @@
+#imports functions from django
 from django.shortcuts import render
 from .models import Post
 
+#functions for showing html sites
 def post_list(request):
     posts = Post.objects.all().order_by('-created_at')
     return render(request, 'myapp/post_list.html', {'posts': posts})
@@ -63,7 +65,7 @@ def Play(request):
 def Resources(request):
     return render(request, "pages/Resources.html", {})
 
-#Map
+
 
 
 

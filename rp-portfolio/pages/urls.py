@@ -5,7 +5,7 @@ from pages import views
 from django.contrib import admin
 
 
-
+#url patterns for all exhibits/ pages
 urlpatterns = [
     path("", views.home, name='home'),
     path("login/", views.LoginPageView, name='login'),
