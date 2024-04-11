@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>CodePen - InteractiveMap_2</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
@@ -12,62 +12,196 @@
 src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
 </script>
 <body>
-<div class = "PartyPlace-txt hide">
-  <a href="../../../../PartyPlace.html" target="_top">Party Place</a>
-  <p> Insert Text</p>
-  </div>
 
-<div class = "ArtSmart-txt hide">
-  <a href="../../../../ArtSmart.html" target="_top">Art Smart</a>
-  <p> Insert Text</p>
-  </div>
+<div id = partyplace-txt class="PartyPlace-txt hide">
+    <p> Insert Text</p>
+</div>
 
-<div class = "SafetyVillage-txt hide">
-  <a href="../../../../SafetyVillage.html" target="_top">Safety Village</a>
-  <p> Insert Text</p>
-  </div>
+<div id = artsmart-txt class="ArtSmart-txt hide">
+    <p> Insert Text</p>
+</div>
 
-<div class = "Farm-txt hide">
-  <a href="../../../../Farm.html" target="_top">Farm</a>
+<div id = safety-txt class="SafetyVillage-txt hide">
+    <p> Insert Text</p>
+</div>
 
-  <p> Insert Text</p>
-  </div>
-  
- <div class = "EngineerW-txt hide">
-  <a href="../../../../EngineersWorkshop.html" target="_top">Engineers' Workshop</a>
-  <p> Insert Text</p>
-  </div>
+<div id = farm-txt class="Farm-txt hide">
+    <p> Insert Text</p>
+</div>
 
-<div class = "TemporaryExhib-txt hide">
-  <a href="../../../../TempExhibit.html" target="_top">Temporary Exhibit</a>
-  <p> Insert Text</p>
-  </div>
+<div id = EW-txt class="EngineerW-txt hide">
+    <p> Insert Text</p>
+</div>
 
-<div class = "FamilyPlay-txt hide">
-  <a href="../../../../FamilyPlay.html" target="_top">Family Play Project</a>
+<div id = temp-txt class="TemporaryExhib-txt hide">
+    <p> Insert Text</p>
+</div>
 
-  <p> Insert Text</p>
-  </div>
+<div id = famplay-txt class="FamilyPlay-txt hide">
+    <p> Insert Text</p>
+</div>
 
-<div class = "Theater-txt hide">
-  <a href="../../../../Theater.html" target="_top">Theather</a>
-  <p> Insert Text</p>
-  </div>
-  
-  <div class ="OceanSandbox-txt hide">
-    <a href="../../../../OceanSandbox.html" target="_top">Ocean Sandbox</a>
-  <p> Insert Text</p>
-  </div>
+<div id = theater-txt class="Theater-txt hide">
+    <p> Insert Text</p>
+</div>
 
-<div class = "Fort-txt hide">
-  <a href="../../../../Forts.html" target="_top">Forts</a>
-  <p> Insert Text</p>
-  </div>
+<div id = ocean-txt class="OceanSandbox-txt hide">
+    <p> Insert Text</p>
+</div>
 
-<div class = "WaterJourney-txt hide">
-  <a href="../../../../Waters.html" target="_top">Water's Journey</a>
-  <p> Insert Text</p>
-  </div>
+<div id = forts-txt class="Fort-txt hide">
+    <p> Insert Text</p>
+</div>
+
+<div id = waters-txt class="WaterJourney-txt hide">
+    <p> Insert Text</p>
+</div>
+
+
+
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the clickable element within the iframe
+    var partyArea = document.getElementById('partyplace-txt');
+    if (partyArea) {
+      partyArea.addEventListener('click', function() {
+        // Redirect the top-level window
+        top.location.href = '/PartyPlace/';
+      });
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the clickable element within the iframe
+    var artArea = document.getElementById('artsmart-txt');
+    if (artArea) {
+     artArea.addEventListener('click', function() {
+        // Redirect the top-level window
+        top.location.href = '/ArtSmart/';
+      });
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the clickable element within the iframe
+    var safetyArea = document.getElementById('safety-txt');
+    if (safetyArea) {
+     safetyArea.addEventListener('click', function() {
+        // Redirect the top-level window
+        top.location.href = '/SafetyVillage/';
+      });
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the clickable element within the iframe
+    var farmArea = document.getElementById('farm-txt');
+    if (farmArea) {
+        farmArea.addEventListener('click', function() {
+        // Redirect the top-level window
+        top.location.href = '/Farm/';
+      });
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the clickable element within the iframe
+    var EWArea = document.getElementById('EW-txt');
+    if (EWArea) {
+        EWArea.addEventListener('click', function() {
+        // Redirect the top-level window
+        top.location.href = '/EngineersWorkshop/';
+      });
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the clickable element within the iframe
+    var tempArea = document.getElementById('temp-txt');
+    if (tempArea) {
+        tempArea.addEventListener('click', function() {
+        // Redirect the top-level window
+        top.location.href = '/Temp/';
+      });
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the clickable element within the iframe
+    var famArea = document.getElementById('famplay-txt');
+    if (famArea) {
+        famArea.addEventListener('click', function() {
+        // Redirect the top-level window
+        top.location.href = '/FamilyPlayProject/';
+      });
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the clickable element within the iframe
+    var theaterArea = document.getElementById('theater-txt');
+    if (theaterArea) {
+        theaterArea.addEventListener('click', function() {
+        // Redirect the top-level window
+        top.location.href = '/Theater/';
+      });
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the clickable element within the iframe
+    var oceanArea = document.getElementById('ocean-txt');
+    if (oceanArea) {
+        oceanArea.addEventListener('click', function() {
+        // Redirect the top-level window
+        top.location.href = '/OceanSandbox/';
+      });
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the clickable element within the iframe
+    var fortArea = document.getElementById('fort-txt');
+    if (fortArea) {
+        fortArea.addEventListener('click', function() {
+        // Redirect the top-level window
+        top.location.href = '/Forts/';
+      });
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the clickable element within the iframe
+    var waterArea = document.getElementById('water-txt');
+    if (waterArea) {
+        waterArea.addEventListener('click', function() {
+        // Redirect the top-level window
+        top.location.href = '/Waters/';
+      });
+    }
+  });
+</script>
 
 <?xml version="1.0" encoding="UTF-8"?>
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 841.89 448.45">
@@ -93,7 +227,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
   <circle class="cls-1 Forts" cx="690.21" cy="252" r="7.33"/>
 </svg>
 <!-- partial -->
-  <script  src="./script.js"></script>
+  <script  src="script.js"></script>
 
 </body>
 </html>

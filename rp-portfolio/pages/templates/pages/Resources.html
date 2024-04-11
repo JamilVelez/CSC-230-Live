@@ -1,14 +1,10 @@
 {% load static %}
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
-<script src="tosTracker.js"></script>
+<html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>GCM-Protoype</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/Login-Form-Basic-icons.css">
     <style>
         body, html {
             background-color: #6dcff6;
@@ -18,87 +14,109 @@
             overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
-        .container {
-            margin-top: 0;
-            padding: 0;
+        .header {
+            position: relative;
+            height: 30vh; /* Adjust height as needed */
+            background-image: url('./.png'); /* Set the image as background */
+            background-size: cover; /* Make sure the background image covers the entire header */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent the background image from repeating */
+            overflow: hidden; /* Prevent content from overflowing */
         }
 
-        .btn-primary {
-            display: inline-block;
-            width: 100px; 
-            height: 100px; 
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px;
+            height: 100px;
             border: 1px solid black;
             padding: 10px;
             background-color: #6dcff6;
-            background-image: url('HomeButton.png'); 
-            background-size: cover;
+            background-image: url('{% static "HomeButton.png" %}'); 
+            background-size: cover; 
             background-repeat: no-repeat;
             text-indent: -9999px;
-            color: transparent; 
-            position: relative; 
-            margin-top: -100px; 
+            color: transparent; /* Hide text */
         }
-        .btn-primary:hover {
+        
+
+
+
+        .home-button:hover {
             background-color: #9b51e0; 
         }
 
-        .btn-vroom {
-            display: inline-block;
-            width: 100px; 
-            height: 100px; 
-            border: 1px solid black;
-            padding: 10px;
-            background-color: #6dcff6;
-            background-image: url('Vroom.png'); 
-            background-size: cover;
-            background-repeat: no-repeat;
-            text-indent: -9999px;
-            color: transparent; 
-            position: relative; 
-            margin-top: 20px; /
-        }
-        .btn-vroom:hover {
-            background-color: #9b51e0; 
+        .title-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px; /* Add padding to the box */
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+            border: 2px solid black; /* Black border */
+            z-index: 2; /* Ensure box is above the image */
         }
 
-        h1.text-center {
-            font-size: 36px;
-            color: black; 
-            margin: auto; 
-            width: 50%;
+        .title {
+            font-size: 36px; 
+            color: #000; /* Text color */
+            text-align: center;
+            margin: 0; /* Remove default margin */
         }
 
-        .text-box {
+        .frame {
             background-color: white; /* Set background color to white */
             padding: 30px; /* Add padding to create space inside the box */
             border: 1px solid black; 
-            width: 500px; 
-            margin: 0 auto; /* Center the box horizontally */
-            position: absolute; /* Position the box */
-            left: 50%; /* Position the box horizontally in the center */
-            top: 50%; /* Position the box vertically in the center */
-            transform: translate(-50%, -50%); /* Center the box both horizontally and vertically */
-            z-index: 1; /* Bring the box forward */
+            width: 70%; /* Adjust width as needed */
+            margin: 0 auto; /* Center horizontally */
+            margin-top: 20px; /* Add top margin to create space below header */
         }
+
+        h2 {
+        font-weight: normal;
+        color: black;
+        font-size: 20px;
+        }
+
     </style>
 </head>
+
 <body>
     <div id="google_translate_element"></div>
-    <div class="container">
-        <nav>
-            <h1 class="text-center mb-4">Resources</h1>
-            <a href="{% url 'home' %}" class="btn btn-primary"></a>
-            <a href="https://www.vroom.org/" class="btn btn-vroom"></a>
-        </nav>
-    
-        <div class="text-box">
-            <!-- Text box content goes here -->
-            <p>*Enter Resources*</p>
+    <div class="header">
+        <a href="{% url 'home' %}">
+            <div class="home-button"></div>
+        </a>
+        <div class="title-box">
+            <h1 class="title">Resources</h1> <!-- Title text inside the box -->
         </div>
     </div>
-
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bold-and-bright.js"></script>
+    
+    <div class="frame">
+        <!-- First frame content goes here -->
+        
+        <p>
+            <a href="https://www.vroom.org/">Vroom</a><br>
+            Explore Vroom's collection of engaging activities designed to spark your child's curiosity and promote early learning development.
+        </p>
+        <p>
+            <a href="https://glazermuseum.org/visit">Plan your visit</a><br>
+            There’s something new to discover with each visit to Glazer Children’s Museum. Play pretend in your favorite signature exhibits and discover new worlds in our traveling exhibits.
+        </p>
+        <p>
+            <a href="https://glazermuseum.org/memberships/">Membership</a><br>
+            Support GCM by becoming a member today and enjoy a full year of imagination and discovery! 
+        </p>
+        <p>
+            <a href="https://glazermuseum.org/financialaccess/">Financial Access</a><br>
+            GCM believes that every child deserves a fun, safe, and inclusive space for imagination and discovery. Our financial access programs provide families and schools in need with access to museum admission, play sessions, field trips, and camps at little-to-no cost.
+        </p>
+        <p>
+            <a href="Feedback form.html">Feedback Form</a>
+        </p>
+    </div>
 
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -107,4 +125,5 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>

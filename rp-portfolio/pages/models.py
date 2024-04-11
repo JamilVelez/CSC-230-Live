@@ -1,5 +1,6 @@
 from django.db import models
 
+#test model for edit site
 class Post(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField()

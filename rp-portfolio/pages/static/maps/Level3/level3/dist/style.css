@@ -1,5 +1,5 @@
 body{
-  background-color: white;
+  background-color: transparent;
 }
 
 .hide{ 
@@ -13,25 +13,16 @@ body{
  
 }
 
-.cafe-txt{
+.BigJohn-txt{
   top: 70%;
-  left: 26%;
+  left: 50%;
    
 }
 
-.GuestServices-txt{
+.LearningCenter-txt{
   top: 70%;
-  left: 26%
-}
+  left: 50%;
 
-.Kidsport-txt{
-  top: 70%;
-  left: 26%;
-}
-
-.Tugboat-txt{
-  top: 70%;
-  left: 26%;
    
     
 }
