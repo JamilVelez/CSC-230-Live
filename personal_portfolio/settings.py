@@ -30,7 +30,7 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'webmaster@localhost'  # Adjust as necessary
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
