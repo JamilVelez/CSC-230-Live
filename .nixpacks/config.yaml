@@ -2,4 +2,4 @@ build:
   - pip install -r requirements.txt
 
 start:
-  - gunicorn myapp.wsgi:application
+  - gunicorn api.wsgi:application
