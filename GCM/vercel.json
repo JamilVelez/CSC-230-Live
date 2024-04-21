@@ -8,7 +8,7 @@
         }
       },
       {
-        "src": "/GCM/wsgi.py",
+        "src": "/personal_portfolio/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb" }
       }
@@ -16,7 +16,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "GCM/wsgi.py"
+        "dest": "personal_portfolio/wsgi.py"
       },
       {
         "src": "/static/(.*)",
