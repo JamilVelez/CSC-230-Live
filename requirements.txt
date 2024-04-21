@@ -1,7 +1,7 @@
 altgraph @ file:///AppleInternal/Library/BuildRoots/9dd5efe2-7fad-11ee-b588-aa530c46a9ea/Library/Caches/com.apple.xbs/Sources/python3/altgraph-0.17.2-py2.py3-none-any.whl
 asgiref==3.8.1
 distlib==0.3.8
-Django==4.2.11
+django==4.2.11
 django-appconf==1.0.6
 django-user-accounts==3.3.2
 filelock==3.13.3
