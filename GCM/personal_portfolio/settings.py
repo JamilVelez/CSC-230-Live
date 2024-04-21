@@ -95,7 +95,7 @@ DATABASES = {
             'NAME': 'ChildMuseum',
             'USER': 'root',
             'PASSWORD': 'blanket123',
-            'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+            'HOST': 'https://csc-230-live-1nqzmifrw-jamil-velezs-projects.vercel.app/',   # Or an IP Address that your DB is hosted on
             'PORT': '3306',
         }
 
