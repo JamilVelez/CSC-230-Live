@@ -28,9 +28,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
   # Adjust as necessary
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['http://jvelez.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 STATIC_URL = '/static/'
 
