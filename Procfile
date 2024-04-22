@@ -1,1 +1,1 @@
-web: gunicorn 'rp-portfolio.wsgi'
+web: gunicorn 'personal_portfolio.wsgi'
