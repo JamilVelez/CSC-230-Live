@@ -94,7 +94,7 @@ DATABASES = {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'jvelez$default',
             'USER': 'jvelez',
-            'PASSWORD': 'inEUq+6>F;tY+%>',
+            'PASSWORD': 'blanket1234',
             'HOST': 'jvelez.mysql.pythonanywhere-services.com',   # Or an IP Address that your DB is hosted on
             'PORT': '3306',
         }
