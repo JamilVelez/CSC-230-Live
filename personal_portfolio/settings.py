@@ -92,10 +92,10 @@ WSGI_APPLICATION = 'personal_portfolio.wsgi.application'
 DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'ChildMuseum',
-            'USER': 'root',
-            'PASSWORD': 'blanket123',
-            'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+            'NAME': 'jvelez$default',
+            'USER': 'jvelez',
+            'PASSWORD': 'inEUq+6>F;tY+%>',
+            'HOST': 'jvelez.mysql.pythonanywhere-services.com',   # Or an IP Address that your DB is hosted on
             'PORT': '3306',
         }
 
