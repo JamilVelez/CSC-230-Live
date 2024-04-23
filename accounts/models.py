@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-from personal_portfolio import settings
-
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -36,24 +34,3 @@ class Child(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class ChatbotResponse(models.Model):
-    trigger = models.CharField(max_length=255)
-    response = models.TextField()
-
-    def __str__(self):
-        return self.trigger
-
-
-# model that stores the time spent by each user on different pages
-"""""""""""
-class PageTimeSpent(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    url = models.CharField(max_length=2048)
-    time_spent = models.IntegerField(help_text="Time spent in milliseconds")
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.user} spent {self.time_spent} on {self.url}"
-        """""""""

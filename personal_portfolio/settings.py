@@ -28,20 +28,20 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
   # Adjust as necessary
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['http://jvelez.pythonanywhere.com', 'jvelez.pythonanywhere.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'csctest/static')
+    os.path.join(BASE_DIR, 'static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Application definition
 
 INSTALLED_APPS = [
-    'csctest.apps.TestConfig',
+    'pages.apps.PagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'django.contrib.sites',
+    'account'
 
 ]
 
@@ -70,7 +71,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'APP_DIRS': True,
-        'DIRS': [BASE_DIR / 'csctest/templates'],
+        'DIRS': [BASE_DIR / 'pages/templates'],
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -92,13 +93,12 @@ WSGI_APPLICATION = 'personal_portfolio.wsgi.application'
 DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'jvelez$default',
-            'USER': 'jvelez',
-            'PASSWORD': 'blanket1234',
-            'HOST': 'jvelez.mysql.pythonanywhere-services.com',   # Or an IP Address that your DB is hosted on
+            'NAME': 'ChildMuseum',
+            'USER': 'root',
+            'PASSWORD': 'blanket123',
+            'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
             'PORT': '3306',
         }
-
     }
 
 # Password validation
@@ -140,14 +140,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+STATIC_URL = 'static/'
 LOGIN_REDIRECT_URL = '/'
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
