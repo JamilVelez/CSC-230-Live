@@ -1,4 +1,4 @@
-from account.decorators import login_required
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from .forms import UserRegisterForm
 from django.core.mail import send_mail
