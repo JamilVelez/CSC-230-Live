@@ -93,13 +93,15 @@ WSGI_APPLICATION = 'personal_portfolio.wsgi.application'
 DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'ChildMuseum',
-            'USER': 'root',
-            'PASSWORD': 'blanket123',
-            'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+            'NAME': 'jvelez$default',
+            'USER': 'jvelez',
+            'PASSWORD': 'blanket1234',
+            'HOST': 'jvelez.mysql.pythonanywhere-services.com',   # Or an IP Address that your DB is hosted on
             'PORT': '3306',
         }
+
     }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
