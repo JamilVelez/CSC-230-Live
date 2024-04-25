@@ -9,7 +9,7 @@ admin.site.register(Exhibit)
 
 
 class ExhibitAdmin(admin.ModelAdmin):
-    list_display = ('ExhibitID', 'ExhibitName', 'Location')
+    list_display = ('id', 'ExhibitName', 'Location')
 
 
 class TypePlayAdmin(admin.ModelAdmin):
