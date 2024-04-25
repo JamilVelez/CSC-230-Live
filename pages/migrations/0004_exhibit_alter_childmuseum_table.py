@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Exhibit',
             fields=[
-                ('ExhibitID', models.IntegerField(primary_key=True, serialize=False)),
+                ('id', models.IntegerField(primary_key=True, serialize=False)),
                 ('ExhibitName', models.CharField(max_length=100)),
                 ('Location', models.CharField(max_length=50)),
             ],
