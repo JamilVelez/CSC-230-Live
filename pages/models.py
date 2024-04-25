@@ -16,7 +16,7 @@ class Exhibit(models.Model):
     Location = models.CharField(max_length=50)
 
     class Meta:
-        db_table = 'csctest_exhibit'
+        db_table = 'csctest_exhibits'
 
     def __str__(self):
         return self.ExhibitName
