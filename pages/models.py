@@ -11,12 +11,12 @@ class Post(models.Model):
 
 
 class Exhibit(models.Model):
-    ExhibitID = models.IntegerField(primary_key=True)  # Assuming ExhibitID is your primary key
+    id = models.IntegerField(primary_key=True)  # Assuming ExhibitID is your primary key
     ExhibitName = models.CharField(max_length=100)
     Location = models.CharField(max_length=50)
 
     class Meta:
-        db_table = 'csctest_exhibits'
+        db_table = 'csctest_exhibit'
 
     def __str__(self):
         return self.ExhibitName
